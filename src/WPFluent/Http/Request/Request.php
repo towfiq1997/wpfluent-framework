@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
 use Closure;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Foundation\Application;
-use FluentBooking\Framework\Validator\ValidationException;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Foundation\Application;
+use Adirectory\Framework\Validator\ValidationException;
 
 class Request
 {
@@ -21,7 +21,7 @@ class Request
 
     /**
      * The application instance
-     * @var \FluentBooking\Framework\Foundation\Application
+     * @var \Adirectory\Framework\Foundation\Application
      */
     protected $app = null;
 
@@ -97,7 +97,7 @@ class Request
 
     /**
      * Construct the request instance
-     * @param \FluentBooking\Framework\Foundation\Application $app
+     * @param \Adirectory\Framework\Foundation\Application $app
      * @param array/$_GET $get
      * @param array/$_POST $post
      * @param array/$_FILES $files
@@ -722,7 +722,7 @@ class Request
     /**
      * Retrieves the currently logged in user.
      * 
-     * @return \FluentBooking\Framework\Http\Request\WPUserProxy
+     * @return \Adirectory\Framework\Http\Request\WPUserProxy
      */
     public function user()
     {

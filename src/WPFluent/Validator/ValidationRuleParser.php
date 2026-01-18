@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
 use Closure;
-use FluentBooking\Framework\Framework\Support\Arr;
-use FluentBooking\Framework\Validator\Rules\Exists;
-use FluentBooking\Framework\Validator\Rules\Unique;
-use FluentBooking\Framework\Validator\Rules\ConditionalRules;
+use Adirectory\Framework\Framework\Support\Arr;
+use Adirectory\Framework\Validator\Rules\Exists;
+use Adirectory\Framework\Validator\Rules\Unique;
+use Adirectory\Framework\Validator\Rules\ConditionalRules;
 
 class ValidationRuleParser
 {
@@ -116,7 +116,7 @@ class ValidationRuleParser
     /**
      * Parse conditional rules.
      * 
-     * @param  \FluentBooking\Framework\Validator\Rules\ConditionalRules $rule
+     * @param  \Adirectory\Framework\Validator\Rules\ConditionalRules $rule
      * @return array
      */
     protected function parseConditionalRules($rule)

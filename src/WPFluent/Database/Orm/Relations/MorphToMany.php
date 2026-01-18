@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
 
 class MorphToMany extends BelongsToMany
 {
@@ -35,8 +35,8 @@ class MorphToMany extends BelongsToMany
     /**
      * Create a new morph to many relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $name
      * @param  string  $table
      * @param  string  $foreignPivotKey
@@ -104,10 +104,10 @@ class MorphToMany extends BelongsToMany
     /**
      * Add the constraints for a relationship count query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQuery(Builder $query, Builder $parentQuery, $columns = ['*'])
     {
@@ -119,7 +119,7 @@ class MorphToMany extends BelongsToMany
     /**
      * Get the pivot models that are currently attached.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     protected function getCurrentlyAttachedPivots()
     {
@@ -134,7 +134,7 @@ class MorphToMany extends BelongsToMany
     /**
      * Create a new query builder for the pivot table.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function newPivotQuery()
     {
@@ -146,7 +146,7 @@ class MorphToMany extends BelongsToMany
      *
      * @param  array  $attributes
      * @param  bool  $exists
-     * @return \FluentBooking\Framework\Database\Orm\Relations\Pivot
+     * @return \Adirectory\Framework\Database\Orm\Relations\Pivot
      */
     public function newPivot(array $attributes = [], $exists = false)
     {

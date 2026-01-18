@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations\Concerns;
+namespace Adirectory\Framework\Database\Orm\Relations\Concerns;
 
-use FluentBooking\Framework\Support\InvalidArgumentException;
+use Adirectory\Framework\Support\InvalidArgumentException;
 
 trait InteractsWithDictionary
 {
@@ -12,7 +12,7 @@ trait InteractsWithDictionary
      * @param  mixed  $attribute
      * @return mixed
      *
-     * @throws FluentBooking\Framework\Support\InvalidArgumentException // @need_fix: Need Proper Namespace
+     * @throws Adirectory\Framework\Support\InvalidArgumentException // @need_fix: Need Proper Namespace
      */
     protected function getDictionaryKey($attribute)
     {

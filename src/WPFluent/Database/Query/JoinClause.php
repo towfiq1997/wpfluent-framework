@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query;
+namespace Adirectory\Framework\Database\Query;
 
 use Closure;
 
@@ -23,21 +23,21 @@ class JoinClause extends Builder
     /**
      * The connection of the parent query builder.
      *
-     * @var \FluentBooking\Framework\Database\ConnectionInterface
+     * @var \Adirectory\Framework\Database\ConnectionInterface
      */
     protected $parentConnection;
 
     /**
      * The grammar of the parent query builder.
      *
-     * @var \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @var \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     protected $parentGrammar;
 
     /**
      * The processor of the parent query builder.
      *
-     * @var \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @var \Adirectory\Framework\Database\Query\Processors\Processor
      */
     protected $parentProcessor;
 
@@ -51,7 +51,7 @@ class JoinClause extends Builder
     /**
      * Create a new join clause instance.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Query\Builder  $parentQuery
      * @param  string  $type
      * @param  string  $table
      * @return void
@@ -84,7 +84,7 @@ class JoinClause extends Builder
      *
      * @param  \Closure|string  $first
      * @param  string|null  $operator
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string|null  $second
+     * @param  \Adirectory\Framework\Database\Query\Expression|string|null  $second
      * @param  string  $boolean
      * @return self
      *
@@ -104,8 +104,8 @@ class JoinClause extends Builder
      *
      * @param  \Closure|string  $first
      * @param  string|null  $operator
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string|null  $second
-     * @return \FluentBooking\Framework\Database\Query\JoinClause
+     * @param  \Adirectory\Framework\Database\Query\Expression|string|null  $second
+     * @return \Adirectory\Framework\Database\Query\JoinClause
      */
     public function orOn($first, $operator = null, $second = null)
     {
@@ -115,7 +115,7 @@ class JoinClause extends Builder
     /**
      * Get a new instance of the join clause builder.
      *
-     * @return \FluentBooking\Framework\Database\Query\JoinClause
+     * @return \Adirectory\Framework\Database\Query\JoinClause
      */
     public function newQuery()
     {
@@ -125,7 +125,7 @@ class JoinClause extends Builder
     /**
      * Create a new query instance for sub-query.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     protected function forSubQuery()
     {
@@ -135,7 +135,7 @@ class JoinClause extends Builder
     /**
      * Create a new parent query instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     protected function newParentQuery()
     {

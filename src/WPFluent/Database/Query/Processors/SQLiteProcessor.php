@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query\Processors;
+namespace Adirectory\Framework\Database\Query\Processors;
 
 class SQLiteProcessor extends Processor
 {

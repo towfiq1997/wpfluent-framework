@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Casts;
+namespace Adirectory\Framework\Database\Orm\Casts;
 
-use FluentBooking\Framework\Database\Orm\Castable;
-use FluentBooking\Framework\Database\Orm\CastsAttributes;
+use Adirectory\Framework\Database\Orm\Castable;
+use Adirectory\Framework\Database\Orm\CastsAttributes;
 
 class AsArrayObject implements Castable
 {

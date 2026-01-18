@@ -1,27 +1,27 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use ArrayAccess;
 use LogicException;
 use JsonSerializable;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\ForwardsCalls;
-use FluentBooking\Framework\Support\UrlRoutable;
-use FluentBooking\Framework\Support\JsonableInterface;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Support\HelperFunctionsTrait;
-use FluentBooking\Framework\Support\CanBeEscapedWhenCastToString;
-use FluentBooking\Framework\Support\Collection as BaseCollection;
-use FluentBooking\Framework\Database\Schema;
-use FluentBooking\Framework\Database\Orm\Relations\Pivot;
-use FluentBooking\Framework\Database\Orm\Relations\BelongsToMany;
-use FluentBooking\Framework\Database\Orm\Relations\HasManyThrough;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\AsPivot;
-use FluentBooking\Framework\Database\Orm\Collection as OrmCollection;
-use FluentBooking\Framework\Database\ConnectionResolverInterface as Resolver;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\ForwardsCalls;
+use Adirectory\Framework\Support\UrlRoutable;
+use Adirectory\Framework\Support\JsonableInterface;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Support\HelperFunctionsTrait;
+use Adirectory\Framework\Support\CanBeEscapedWhenCastToString;
+use Adirectory\Framework\Support\Collection as BaseCollection;
+use Adirectory\Framework\Database\Schema;
+use Adirectory\Framework\Database\Orm\Relations\Pivot;
+use Adirectory\Framework\Database\Orm\Relations\BelongsToMany;
+use Adirectory\Framework\Database\Orm\Relations\HasManyThrough;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\AsPivot;
+use Adirectory\Framework\Database\Orm\Collection as OrmCollection;
+use Adirectory\Framework\Database\ConnectionResolverInterface as Resolver;
 
 abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhenCastToString, JsonableInterface, JsonSerializable, UrlRoutable
 {
@@ -123,14 +123,14 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * The connection resolver instance.
      *
-     * @var \FluentBooking\Framework\Database\ConnectionResolverInterface
+     * @var \Adirectory\Framework\Database\ConnectionResolverInterface
      */
     protected static $resolver;
 
     /**
      * The event dispatcher instance.
      *
-     * @var \FluentBooking\Framework\Events\Dispatcher
+     * @var \Adirectory\Framework\Events\Dispatcher
      */
     protected static $dispatcher;
 
@@ -426,7 +426,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * @param  array  $attributes
      * @return $this
      *
-     * @throws \FluentBooking\Framework\Database\Orm\MassAssignmentException
+     * @throws \Adirectory\Framework\Database\Orm\MassAssignmentException
      */
     public function fill(array $attributes)
     {
@@ -575,7 +575,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Begin querying the model on a given connection.
      *
      * @param  string|null  $connection
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public static function on($connection = null)
     {
@@ -593,7 +593,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Begin querying the model on the write connection.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public static function onWriteConnection()
     {
@@ -604,7 +604,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Get all of the models from the database.
      *
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Collection|static[]
+     * @return \Adirectory\Framework\Database\Orm\Collection|static[]
      */
     public static function all($columns = ['*'])
     {
@@ -617,7 +617,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Begin querying a model with eager loading.
      *
      * @param  array|string  $relations
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public static function with($relations)
     {
@@ -1090,7 +1090,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Perform a model update operation.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
      * @return bool
      */
     protected function performUpdate(Builder $query)
@@ -1128,8 +1128,8 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Set the keys for a select query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     protected function setKeysForSelectQuery($query)
     {
@@ -1151,8 +1151,8 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Set the keys for a save update query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     protected function setKeysForSaveQuery($query)
     {
@@ -1174,7 +1174,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Perform a model insert operation.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
      * @return bool
      */
     protected function performInsert(Builder $query)
@@ -1225,7 +1225,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Insert the given attributes and set the ID on the model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
      * @param  array  $attributes
      * @return void
      */
@@ -1239,7 +1239,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Destroy the models for the given IDs.
      *
-     * @param  \FluentBooking\Framework\Support\Collection|array|int|string  $ids
+     * @param  \Adirectory\Framework\Support\Collection|array|int|string  $ids
      * @return int
      */
     public static function destroy($ids)
@@ -1360,7 +1360,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Begin querying the model.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public static function query()
     {
@@ -1370,7 +1370,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query builder for the model's table.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function newQuery()
     {
@@ -1380,7 +1380,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query builder that doesn't have any global scopes or eager loading.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function newModelQuery()
     {
@@ -1392,7 +1392,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query builder with no relationships loaded.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function newQueryWithoutRelationships()
     {
@@ -1402,8 +1402,8 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Register the global scopes for this builder instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function registerGlobalScopes($builder)
     {
@@ -1417,7 +1417,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query builder that doesn't have any global scopes.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function newQueryWithoutScopes()
     {
@@ -1429,8 +1429,8 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query instance without a given scope.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Scope|string  $scope
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @param  \Adirectory\Framework\Database\Orm\Scope|string  $scope
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function newQueryWithoutScope($scope)
     {
@@ -1441,7 +1441,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Get a new query to restore one or more models by their queueable IDs.
      *
      * @param  array|int  $ids
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function newQueryForRestoration($ids)
     {
@@ -1453,8 +1453,8 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Create a new Orm query builder for the model.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function newOrmBuilder($query)
     {
@@ -1464,7 +1464,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get a new query builder instance for the connection.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     protected function newBaseQueryBuilder()
     {
@@ -1475,7 +1475,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Create a new Orm Collection instance.
      *
      * @param  array  $models
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     public function newCollection(array $models = [])
     {
@@ -1485,12 +1485,12 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Create a new pivot model instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  array  $attributes
      * @param  string  $table
      * @param  bool  $exists
      * @param  string|null  $using
-     * @return \FluentBooking\Framework\Database\Orm\Relations\Pivot
+     * @return \Adirectory\Framework\Database\Orm\Relations\Pivot
      */
     public function newPivot(
         self $parent, array $attributes, $table, $exists, $using = null
@@ -1540,7 +1540,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * @param  int  $options
      * @return string
      *
-     * @throws \FluentBooking\Framework\Database\Orm\JsonEncodingException
+     * @throws \Adirectory\Framework\Database\Orm\JsonEncodingException
      */
     public function toJson($options = 0)
     {
@@ -1636,7 +1636,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Determine if two models have the same ID and belong to the same table.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model|null  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model|null  $model
      * @return bool
      */
     public function is($model)
@@ -1650,7 +1650,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Determine if two models are not the same.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model|null  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model|null  $model
      * @return bool
      */
     public function isNot($model)
@@ -1661,7 +1661,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get the database connection for the model.
      *
-     * @return \FluentBooking\Framework\Database\Query\WPDBConnection
+     * @return \Adirectory\Framework\Database\Query\WPDBConnection
      */
     public function getConnection()
     {
@@ -1695,7 +1695,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      * Resolve a connection instance.
      *
      * @param  string|null  $connection
-     * @return \FluentBooking\Framework\Database\Query\WPDBConnection
+     * @return \Adirectory\Framework\Database\Query\WPDBConnection
      */
     public static function resolveConnection($connection = null)
     {
@@ -1705,7 +1705,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Get the connection resolver instance.
      *
-     * @return \FluentBooking\Framework\Database\ConnectionResolverInterface
+     * @return \Adirectory\Framework\Database\ConnectionResolverInterface
      */
     public static function getConnectionResolver()
     {
@@ -1715,7 +1715,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Set the connection resolver instance.
      *
-     * @param  \FluentBooking\Framework\Database\ConnectionResolverInterface  $resolver
+     * @param  \Adirectory\Framework\Database\ConnectionResolverInterface  $resolver
      * @return void
      */
     public static function setConnectionResolver(Resolver $resolver)
@@ -1872,7 +1872,7 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
      *
      * @param  mixed  $value
      * @param  string|null  $field
-     * @return \FluentBooking\Framework\Database\Orm\Model|null
+     * @return \Adirectory\Framework\Database\Orm\Model|null
      */
     public function resolveRouteBinding($value, $field = null)
     {
@@ -1884,10 +1884,10 @@ abstract class Model implements ArrayableInterface, ArrayAccess, CanBeEscapedWhe
     /**
      * Retrieve the model for a bound value.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $query
      * @param  mixed  $value
      * @param  string|null  $field
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function resolveRouteBindingQuery($query, $value, $field = null)
     {

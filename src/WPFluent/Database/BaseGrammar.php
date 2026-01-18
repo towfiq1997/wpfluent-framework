@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database;
+namespace Adirectory\Framework\Database;
 
 use RuntimeException;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Database\Query\Expression;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Database\Query\Expression;
 
 abstract class BaseGrammar
 {
@@ -14,7 +14,7 @@ abstract class BaseGrammar
     /**
      * The connection used for escaping values.
      *
-     * @var \FluentBooking\Framework\Database\ConnectionInterface
+     * @var \Adirectory\Framework\Database\ConnectionInterface
      */
     protected $connection;
 
@@ -46,7 +46,7 @@ abstract class BaseGrammar
     /**
      * Wrap a table in keyword identifiers.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $table
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $table
      * @return string
      */
     public function wrapTable($table)
@@ -113,7 +113,7 @@ abstract class BaseGrammar
     /**
      * Wrap a value in keyword identifiers.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $value
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $value
      * @return string
      */
     public function wrap($value)
@@ -305,7 +305,7 @@ abstract class BaseGrammar
     /**
      * Transforms expressions to their scalar types.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string|int|float  $expression
+     * @param  \Adirectory\Framework\Database\Query\Expression|string|int|float  $expression
      * @return string|int|float
      */
     public function getValue($expression)
@@ -355,7 +355,7 @@ abstract class BaseGrammar
     /**
      * Set the grammar's database connection.
      *
-     * @param  \FluentBooking\Framework\Database\ConnectionInterface  $connection
+     * @param  \Adirectory\Framework\Database\ConnectionInterface  $connection
      * @return $this
      */
     public function setConnection($connection)

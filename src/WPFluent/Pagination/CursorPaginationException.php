@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 use RuntimeException;
 

@@ -1,29 +1,29 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Concerns;
+namespace Adirectory\Framework\Database\Concerns;
 
 use RuntimeException;
 use InvalidArgumentException;
-use FluentBooking\Framework\Container\Container;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\Conditionable;
-use FluentBooking\Framework\Support\LazyCollection;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\RecordsNotFoundException;
-use FluentBooking\Framework\Database\MultipleRecordsFoundException;
-use FluentBooking\Framework\Pagination\Cursor;
-use FluentBooking\Framework\Pagination\Paginator;
-use FluentBooking\Framework\Pagination\CursorPaginator;
-use FluentBooking\Framework\Pagination\LengthAwarePaginator;
+use Adirectory\Framework\Container\Container;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\Conditionable;
+use Adirectory\Framework\Support\LazyCollection;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\RecordsNotFoundException;
+use Adirectory\Framework\Database\MultipleRecordsFoundException;
+use Adirectory\Framework\Pagination\Cursor;
+use Adirectory\Framework\Pagination\Paginator;
+use Adirectory\Framework\Pagination\CursorPaginator;
+use Adirectory\Framework\Pagination\LengthAwarePaginator;
 
 /**
  * @template TValue
  *
- * @mixin \FluentBooking\Framework\Database\Orm\Builder
- * @mixin \FluentBooking\Framework\Database\Query\Builder
+ * @mixin \Adirectory\Framework\Database\Orm\Builder
+ * @mixin \Adirectory\Framework\Database\Query\Builder
  */
 trait BuildsQueries
 {
@@ -33,7 +33,7 @@ trait BuildsQueries
      * Chunk the results of the query.
      *
      * @param  int  $count
-     * @param  callable(\FluentBooking\Framework\Support\Collection<int, TValue>, int): mixed  $callback
+     * @param  callable(\Adirectory\Framework\Support\Collection<int, TValue>, int): mixed  $callback
      * @return bool
      */
     public function chunk($count, callable $callback)
@@ -76,7 +76,7 @@ trait BuildsQueries
      *
      * @param  callable(TValue): TReturn  $callback
      * @param  int  $count
-     * @return \FluentBooking\Framework\Support\Collection<int, TReturn>
+     * @return \Adirectory\Framework\Support\Collection<int, TReturn>
      */
     public function chunkMap(callable $callback, $count = 1000)
     {
@@ -115,7 +115,7 @@ trait BuildsQueries
      * Chunk the results of a query by comparing IDs.
      *
      * @param  int  $count
-     * @param  callable(\FluentBooking\Framework\Support\Collection<int, TValue>, int): mixed  $callback
+     * @param  callable(\Adirectory\Framework\Support\Collection<int, TValue>, int): mixed  $callback
      * @param  string|null  $column
      * @param  string|null  $alias
      * @return bool
@@ -129,7 +129,7 @@ trait BuildsQueries
      * Chunk the results of a query by comparing IDs in descending order.
      *
      * @param  int  $count
-     * @param  callable(\FluentBooking\Framework\Support\Collection<int, TValue>, int): mixed  $callback
+     * @param  callable(\Adirectory\Framework\Support\Collection<int, TValue>, int): mixed  $callback
      * @param  string|null  $column
      * @param  string|null  $alias
      * @return bool
@@ -145,7 +145,7 @@ trait BuildsQueries
      * Chunk the results of a query by comparing IDs in a given order.
      *
      * @param  int  $count
-     * @param  callable(\FluentBooking\Framework\Support\Collection<int, TValue>, int): mixed  $callback
+     * @param  callable(\Adirectory\Framework\Support\Collection<int, TValue>, int): mixed  $callback
      * @param  string|null  $column
      * @param  string|null  $alias
      * @param  bool  $descending
@@ -226,7 +226,7 @@ trait BuildsQueries
      * Query lazily, by chunks of the given size.
      *
      * @param  int  $chunkSize
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      *
      * @throws \InvalidArgumentException
      */
@@ -263,7 +263,7 @@ trait BuildsQueries
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      *
      * @throws \InvalidArgumentException
      */
@@ -278,7 +278,7 @@ trait BuildsQueries
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      *
      * @throws \InvalidArgumentException
      */
@@ -294,7 +294,7 @@ trait BuildsQueries
      * @param  string|null  $column
      * @param  string|null  $alias
      * @param  bool  $descending
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      *
      * @throws \InvalidArgumentException
      */
@@ -356,8 +356,8 @@ trait BuildsQueries
      * @param  array|string  $columns
      * @return TValue
      *
-     * @throws \FluentBooking\Framework\Database\RecordsNotFoundException
-     * @throws \FluentBooking\Framework\Database\MultipleRecordsFoundException
+     * @throws \Adirectory\Framework\Database\RecordsNotFoundException
+     * @throws \Adirectory\Framework\Database\MultipleRecordsFoundException
      */
     public function sole($columns = ['*'])
     {
@@ -382,8 +382,8 @@ trait BuildsQueries
      * @param  int  $perPage
      * @param  array|string  $columns
      * @param  string  $cursorName
-     * @param  \FluentBooking\Framework\Pagination\Cursor|string|null  $cursor
-     * @return \FluentBooking\Framework\Contracts\Pagination\CursorPaginator
+     * @param  \Adirectory\Framework\Pagination\Cursor|string|null  $cursor
+     * @return \Adirectory\Framework\Contracts\Pagination\CursorPaginator
      */
     protected function paginateUsingCursor($perPage, $columns = ['*'], $cursorName = 'cursor', $cursor = null)
     {
@@ -478,7 +478,7 @@ trait BuildsQueries
     /**
      * Get the original column name of the given column, without any aliasing.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder<*>  $builder
+     * @param  \Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder<*>  $builder
      * @param  string  $parameter
      * @return string
      */
@@ -506,12 +506,12 @@ trait BuildsQueries
     /**
      * Create a new length-aware paginator instance.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $items
+     * @param  \Adirectory\Framework\Support\Collection  $items
      * @param  int  $total
      * @param  int  $perPage
      * @param  int  $currentPage
      * @param  array  $options
-     * @return \FluentBooking\Framework\Pagination\LengthAwarePaginator
+     * @return \Adirectory\Framework\Pagination\LengthAwarePaginator
      */
     protected function paginator($items, $total, $perPage, $currentPage, $options)
     {
@@ -523,11 +523,11 @@ trait BuildsQueries
     /**
      * Create a new simple paginator instance.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $items
+     * @param  \Adirectory\Framework\Support\Collection  $items
      * @param  int  $perPage
      * @param  int  $currentPage
      * @param  array  $options
-     * @return \FluentBooking\Framework\Pagination\Paginator
+     * @return \Adirectory\Framework\Pagination\Paginator
      */
     protected function simplePaginator($items, $perPage, $currentPage, $options)
     {
@@ -539,11 +539,11 @@ trait BuildsQueries
     /**
      * Create a new cursor paginator instance.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $items
+     * @param  \Adirectory\Framework\Support\Collection  $items
      * @param  int  $perPage
-     * @param  \FluentBooking\Framework\Pagination\Cursor  $cursor
+     * @param  \Adirectory\Framework\Pagination\Cursor  $cursor
      * @param  array  $options
-     * @return \FluentBooking\Framework\Pagination\CursorPaginator
+     * @return \Adirectory\Framework\Pagination\CursorPaginator
      */
     protected function cursorPaginator($items, $perPage, $cursor, $options)
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Cache;
+namespace Adirectory\Framework\Cache;
 
 use Closure;
 use Throwable;
 use RuntimeException;
-use FluentBooking\Framework\Support\Path;
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Support\Path;
+use Adirectory\Framework\Foundation\App;
 
 class Cache
 {

@@ -1,20 +1,20 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 use Closure;
 use Exception;
 use ArrayAccess;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Tappable;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\ForwardsCalls;
-use FluentBooking\Framework\Database\Orm\Relations\Pivot;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Tappable;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\ForwardsCalls;
+use Adirectory\Framework\Database\Orm\Relations\Pivot;
 
 /**
- * @mixin \FluentBooking\Framework\Support\Collection
+ * @mixin \Adirectory\Framework\Support\Collection
  */
 abstract class AbstractCursorPaginator
 {
@@ -23,7 +23,7 @@ abstract class AbstractCursorPaginator
     /**
      * All of the items being paginated.
      *
-     * @var \FluentBooking\Framework\Support\Collection
+     * @var \Adirectory\Framework\Support\Collection
      */
     protected $items;
 
@@ -65,7 +65,7 @@ abstract class AbstractCursorPaginator
     /**
      * The current cursor.
      *
-     * @var \FluentBooking\Framework\Pagination\Cursor|null
+     * @var \Adirectory\Framework\Pagination\Cursor|null
      */
     protected $cursor;
 
@@ -93,7 +93,7 @@ abstract class AbstractCursorPaginator
     /**
      * Get the URL for a given cursor.
      *
-     * @param  \FluentBooking\Framework\Pagination\Cursor|null  $cursor
+     * @param  \Adirectory\Framework\Pagination\Cursor|null  $cursor
      * @return string
      */
     public function url($cursor)
@@ -144,7 +144,7 @@ abstract class AbstractCursorPaginator
     /**
      * Get the "cursor" that points to the previous set of items.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function previousCursor()
     {
@@ -163,7 +163,7 @@ abstract class AbstractCursorPaginator
     /**
      * Get the "cursor" that points to the next set of items.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function nextCursor()
     {
@@ -184,7 +184,7 @@ abstract class AbstractCursorPaginator
      *
      * @param  \ArrayAccess|\stdClass  $item
      * @param  bool  $isNext
-     * @return \FluentBooking\Framework\Pagination\Cursor
+     * @return \Adirectory\Framework\Pagination\Cursor
      */
     public function getCursorForItem($item, $isNext = true)
     {
@@ -414,7 +414,7 @@ abstract class AbstractCursorPaginator
     /**
      * Get the current cursor being paginated.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function cursor()
     {
@@ -482,7 +482,7 @@ abstract class AbstractCursorPaginator
      * Resolve the current cursor or return the default value.
      *
      * @param  string  $cursorName
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public static function resolveCurrentCursor($cursorName = 'cursor', $default = null)
     {
@@ -549,7 +549,7 @@ abstract class AbstractCursorPaginator
     /**
      * Get the paginator's underlying collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function getCollection()
     {
@@ -559,7 +559,7 @@ abstract class AbstractCursorPaginator
     /**
      * Set the paginator's underlying collection.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $collection
+     * @param  \Adirectory\Framework\Support\Collection  $collection
      * @return $this
      */
     public function setCollection(Collection $collection)

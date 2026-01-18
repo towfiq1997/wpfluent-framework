@@ -1,18 +1,18 @@
 <?php
 
-namespace FluentBooking\Framework\Events;
+namespace Adirectory\Framework\Events;
 
 use Closure;
 use Exception;
 use ReflectionClass;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Container\Container;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\ReflectsClosures;
-use FluentBooking\Framework\Events\DispatcherInterface;
-use FluentBooking\Framework\Container\Contracts\Container as ContainerContract;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Container\Container;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\ReflectsClosures;
+use Adirectory\Framework\Events\DispatcherInterface;
+use Adirectory\Framework\Container\Contracts\Container as ContainerContract;
 
 
 class Dispatcher implements DispatcherInterface
@@ -22,7 +22,7 @@ class Dispatcher implements DispatcherInterface
     /**
      * The IoC container instance.
      *
-     * @var \FluentBooking\Framework\Container\Contracts\Container
+     * @var \Adirectory\Framework\Container\Contracts\Container
      */
     protected $container;
 
@@ -50,7 +50,7 @@ class Dispatcher implements DispatcherInterface
     /**
      * Create a new event dispatcher instance.
      *
-     * @param  \FluentBooking\Framework\Container\Contracts\Container|null  $container
+     * @param  \Adirectory\Framework\Container\Contracts\Container|null  $container
      * @return void
      */
     public function __construct(?ContainerContract $container = null)

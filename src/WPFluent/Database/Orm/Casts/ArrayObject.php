@@ -1,10 +1,10 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Casts;
+namespace Adirectory\Framework\Database\Orm\Casts;
 
 use JsonSerializable;
-USE FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\ArrayableInterface;
+USE Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\ArrayableInterface;
 use ArrayObject as BaseArrayObject;
 
 class ArrayObject extends BaseArrayObject implements ArrayableInterface, JsonSerializable
@@ -12,7 +12,7 @@ class ArrayObject extends BaseArrayObject implements ArrayableInterface, JsonSer
     /**
      * Get a collection containing the underlying array.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function collect()
     {

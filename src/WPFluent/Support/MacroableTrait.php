@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use ReflectionClass;

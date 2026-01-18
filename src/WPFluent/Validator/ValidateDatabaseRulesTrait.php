@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
 use Closure;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Validator\Rules\Exists;
-use FluentBooking\Framework\Validator\Rules\Unique;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Validator\Rules\Exists;
+use Adirectory\Framework\Validator\Rules\Unique;
 
 trait ValidateDatabaseRulesTrait
 {

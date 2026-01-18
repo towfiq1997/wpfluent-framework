@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Container;
+namespace Adirectory\Framework\Container;
 
 use Countable;
 use IteratorAggregate;

@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database;
+namespace Adirectory\Framework\Database;
 
 interface ConnectionResolverInterface
 {
@@ -8,7 +8,7 @@ interface ConnectionResolverInterface
      * Get a database connection instance.
      *
      * @param  string|null  $name
-     * @return \FluentBooking\Framework\Database\ConnectionInterface
+     * @return \Adirectory\Framework\Database\ConnectionInterface
      */
     public function connection($name = null);
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace FluentBooking\Framework\Container;
+namespace Adirectory\Framework\Container;
 
-use FluentBooking\Framework\Container\Contracts\Container;
-use FluentBooking\Framework\Container\Contracts\ContextualBindingBuilder as ContextualBindingBuilderContract;
+use Adirectory\Framework\Container\Contracts\Container;
+use Adirectory\Framework\Container\Contracts\ContextualBindingBuilder as ContextualBindingBuilderContract;
 
 class ContextualBindingBuilder implements ContextualBindingBuilderContract
 {
     /**
      * The underlying container instance.
      *
-     * @var \FluentBooking\Framework\Container\Contracts\Container
+     * @var \Adirectory\Framework\Container\Contracts\Container
      */
     protected $container;
 
@@ -31,7 +31,7 @@ class ContextualBindingBuilder implements ContextualBindingBuilderContract
     /**
      * Create a new contextual binding builder.
      *
-     * @param  \FluentBooking\Framework\Container\Contracts\Container  $container
+     * @param  \Adirectory\Framework\Container\Contracts\Container  $container
      * @param  string|array  $concrete
      * @return void
      */

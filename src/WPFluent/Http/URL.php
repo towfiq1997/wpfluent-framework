@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use Exception;
-use FluentBooking\Framework\Support\Util;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\DateTime;
-use FluentBooking\Framework\Support\UriTemplate;
+use Adirectory\Framework\Support\Util;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\DateTime;
+use Adirectory\Framework\Support\UriTemplate;
 
 class URL
 {

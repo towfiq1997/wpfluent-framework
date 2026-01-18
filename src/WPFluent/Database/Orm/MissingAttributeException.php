@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use OutOfBoundsException;
 
@@ -9,7 +9,7 @@ class MissingAttributeException extends OutOfBoundsException
     /**
      * Create a new missing attribute exception instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @param  string  $key
      * @return void
      */

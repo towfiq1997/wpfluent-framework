@@ -1,16 +1,16 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 use Countable;
 use ArrayAccess;
 use JsonSerializable;
 use IteratorAggregate;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\JsonableInterface;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Pagination\AbstractPaginator;
-use FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\JsonableInterface;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Pagination\AbstractPaginator;
+use Adirectory\Framework\Pagination\LengthAwarePaginatorInterface;
 
 class LengthAwarePaginator extends AbstractPaginator implements ArrayableInterface, ArrayAccess, Countable, IteratorAggregate, JsonSerializable, JsonableInterface, LengthAwarePaginatorInterface
 {
@@ -71,7 +71,7 @@ class LengthAwarePaginator extends AbstractPaginator implements ArrayableInterfa
     /**
      * Get the paginator links as a collection (for JSON responses).
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function linkCollection()
     {

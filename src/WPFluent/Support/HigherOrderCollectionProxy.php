@@ -1,18 +1,18 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
-Use FluentBooking\Framework\Support\Enumerable;
+Use Adirectory\Framework\Support\Enumerable;
 
 /**
- * @mixin \FluentBooking\Framework\Support\Enumerable
+ * @mixin \Adirectory\Framework\Support\Enumerable
  */
 class HigherOrderCollectionProxy
 {
     /**
      * The collection being operated on.
      *
-     * @var \FluentBooking\Framework\Support\Enumerable
+     * @var \Adirectory\Framework\Support\Enumerable
      */
     protected $collection;
 
@@ -26,7 +26,7 @@ class HigherOrderCollectionProxy
     /**
      * Create a new proxy instance.
      *
-     * @param  \FluentBooking\Framework\Support\Enumerable  $collection
+     * @param  \Adirectory\Framework\Support\Enumerable  $collection
      * @param  string  $method
      * @return void
      */

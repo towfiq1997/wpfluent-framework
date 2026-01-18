@@ -1,17 +1,17 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
 use Countable;
 use Exception;
 use ValueError;
 use DateTimeInterface;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\DateTime;
-use FluentBooking\Framework\Validator\Contracts\File;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\DateTime;
+use Adirectory\Framework\Validator\Contracts\File;
 
 trait ValidatesAttributes
 {
@@ -496,7 +496,7 @@ trait ValidatesAttributes
         }
 
         /**
-         * @var $value \FluentBooking\Framework\Validator\Contracts\File
+         * @var $value \Adirectory\Framework\Validator\Contracts\File
          */
         return $value->getPath() != '' && in_array(
             $value->guessExtension(), $parameters
@@ -554,7 +554,7 @@ trait ValidatesAttributes
         }
 
         /**
-         * @var $value \FluentBooking\Framework\Validator\Contracts\File
+         * @var $value \Adirectory\Framework\Validator\Contracts\File
          */
         return strtolower($value->getClientOriginalExtension()) === 'php';
     }

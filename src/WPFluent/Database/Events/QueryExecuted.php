@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Events;
+namespace Adirectory\Framework\Database\Events;
 
 class QueryExecuted
 {
@@ -28,7 +28,7 @@ class QueryExecuted
     /**
      * The database connection instance.
      *
-     * @var \FluentBooking\Framework\Database\Query\WPDBConnection
+     * @var \Adirectory\Framework\Database\Query\WPDBConnection
      */
     public $connection;
 
@@ -45,7 +45,7 @@ class QueryExecuted
      * @param  string  $sql
      * @param  array  $bindings
      * @param  float|null  $time
-     * @param  \FluentBooking\Framework\Database\Query\WPDBConnection  $connection
+     * @param  \Adirectory\Framework\Database\Query\WPDBConnection  $connection
      * @return void
      */
     public function __construct($sql, $bindings, $time, $connection)

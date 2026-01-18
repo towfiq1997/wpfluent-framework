@@ -1,20 +1,20 @@
 <?php
 
-namespace FluentBooking\Framework\Container;
+namespace Adirectory\Framework\Container;
 
 use Closure;
 use ReflectionMethod;
 use ReflectionFunction;
 use InvalidArgumentException;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Container\Contracts\BindingResolutionException;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Container\Contracts\BindingResolutionException;
 
 class BoundMethod
 {
     /**
      * Call the given Closure / class@method and inject its dependencies.
      *
-     * @param  \FluentBooking\Framework\Container\Container  $container
+     * @param  \Adirectory\Framework\Container\Container  $container
      * @param  callable|string  $callback
      * @param  array  $parameters
      * @param  string|null  $defaultMethod
@@ -45,7 +45,7 @@ class BoundMethod
     /**
      * Call a string reference to a class using Class@method syntax.
      *
-     * @param  \FluentBooking\Framework\Container\Container  $container
+     * @param  \Adirectory\Framework\Container\Container  $container
      * @param  string  $target
      * @param  array  $parameters
      * @param  string|null  $defaultMethod
@@ -75,7 +75,7 @@ class BoundMethod
     /**
      * Call a method that has been bound to the container.
      *
-     * @param  \FluentBooking\Framework\Container\Container  $container
+     * @param  \Adirectory\Framework\Container\Container  $container
      * @param  callable  $callback
      * @param  mixed  $default
      * @return mixed
@@ -114,7 +114,7 @@ class BoundMethod
     /**
      * Get all dependencies for a given method.
      *
-     * @param  \FluentBooking\Framework\Container\Container  $container
+     * @param  \Adirectory\Framework\Container\Container  $container
      * @param  callable|string  $callback
      * @param  array  $parameters
      * @return array
@@ -158,13 +158,13 @@ class BoundMethod
     /**
      * Get the dependency for the given call parameter.
      *
-     * @param  \FluentBooking\Framework\Container\Container  $container
+     * @param  \Adirectory\Framework\Container\Container  $container
      * @param  \ReflectionParameter  $parameter
      * @param  array  $parameters
      * @param  array  $dependencies
      * @return void
      *
-     * @throws \FluentBooking\Framework\Container\Contracts\BindingResolutionException
+     * @throws \Adirectory\Framework\Container\Contracts\BindingResolutionException
      */
     protected static function addDependencyForCallParameter(
         $container, $parameter, array &$parameters, &$dependencies

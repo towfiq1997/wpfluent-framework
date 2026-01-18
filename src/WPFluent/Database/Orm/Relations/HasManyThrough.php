@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
 
 class HasManyThrough extends HasOneOrManyThrough
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use RuntimeException;
 

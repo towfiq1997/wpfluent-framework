@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Response;
+namespace Adirectory\Framework\Http\Response;
 
 use DateTime;
 use WP_Error;
 use DateTimeInterface;
 use WP_REST_Response;
-use FluentBooking\Framework\App\App;
+use Adirectory\Framework\App\App;
 use InvalidArgumentException;
-use FluentBooking\Framework\Http\Request\File;
+use Adirectory\Framework\Http\Request\File;
 
 class Response
 {

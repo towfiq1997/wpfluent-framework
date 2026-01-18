@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use DateTimeZone;
 use DateInterval;
@@ -858,7 +858,7 @@ class DateTime extends PHPDateTime
     /**
      * Clone the current Object
      * 
-     * @return \FluentBooking\Framework\Support\DateTime
+     * @return \Adirectory\Framework\Support\DateTime
      */
     public function copy()
     {
@@ -868,7 +868,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in years
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInYears($date)
@@ -879,7 +879,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in months
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInMonths($date)
@@ -892,7 +892,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in days
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInDays($date)
@@ -905,7 +905,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in hours
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInHours($date)
@@ -920,7 +920,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in minutes
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInMinutes($date)
@@ -937,7 +937,7 @@ class DateTime extends PHPDateTime
     /**
      * Get the difference in seconds
      * 
-     * @param  \FluentBooking\Framework\Support\DateTime $date
+     * @param  \Adirectory\Framework\Support\DateTime $date
      * @return int
      */
     public function diffInSeconds($date)

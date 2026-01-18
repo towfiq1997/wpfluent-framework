@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query;
+namespace Adirectory\Framework\Database\Query;
 
 class JoinLateralClause extends JoinClause
 {

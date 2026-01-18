@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FluentBooking\Framework\Container\Contracts\Psr;
+namespace Adirectory\Framework\Container\Contracts\Psr;
 
 /**
  * Describes the interface of a container that exposes methods to read its entries.

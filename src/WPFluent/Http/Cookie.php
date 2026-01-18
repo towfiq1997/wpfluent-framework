@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use DateTime;
 use DateTimeInterface;
 use InvalidArgumentException;
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Foundation\App;
 
 class Cookie
 {

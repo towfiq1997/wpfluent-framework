@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use BadMethodCallException;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Database\Orm\Relations\HasMany;
-use FluentBooking\Framework\Database\Orm\Relations\MorphOneOrMany;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Database\Orm\Relations\HasMany;
+use Adirectory\Framework\Database\Orm\Relations\MorphOneOrMany;
 
 /**
- * @template TIntermediateModel of \FluentBooking\Framework\Database\Orm\Model
- * @template TDeclaringModel of \FluentBooking\Framework\Database\Orm\Model
+ * @template TIntermediateModel of \Adirectory\Framework\Database\Orm\Model
+ * @template TDeclaringModel of \Adirectory\Framework\Database\Orm\Model
  */
 class PendingHasThroughRelationship
 {
@@ -23,7 +23,7 @@ class PendingHasThroughRelationship
     /**
      * The local relationship.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, TDeclaringModel>|\FluentBooking\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, TDeclaringModel>
+     * @var \Adirectory\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, TDeclaringModel>|\Adirectory\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, TDeclaringModel>
      */
     protected $localRelationship;
 
@@ -31,7 +31,7 @@ class PendingHasThroughRelationship
      * Create a pending has-many-through or has-one-through relationship.
      *
      * @param  TDeclaringModel  $rootModel
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, TDeclaringModel>|\FluentBooking\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, TDeclaringModel>  $localRelationship
+     * @param  \Adirectory\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, TDeclaringModel>|\Adirectory\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, TDeclaringModel>  $localRelationship
      */
     public function __construct($rootModel, $localRelationship)
     {
@@ -43,16 +43,16 @@ class PendingHasThroughRelationship
     /**
      * Define the distant relationship that this model has.
      *
-     * @template TRelatedModel of \FluentBooking\Framework\Database\Orm\Model
+     * @template TRelatedModel of \Adirectory\Framework\Database\Orm\Model
      *
-     * @param  string|(callable(TIntermediateModel): (\FluentBooking\Framework\Database\Orm\Relations\HasOne<TRelatedModel, TIntermediateModel>|\FluentBooking\Framework\Database\Orm\Relations\HasMany<TRelatedModel, TIntermediateModel>|\FluentBooking\Framework\Database\Orm\Relations\MorphOneOrMany<TRelatedModel, TIntermediateModel>))  $callback
+     * @param  string|(callable(TIntermediateModel): (\Adirectory\Framework\Database\Orm\Relations\HasOne<TRelatedModel, TIntermediateModel>|\Adirectory\Framework\Database\Orm\Relations\HasMany<TRelatedModel, TIntermediateModel>|\Adirectory\Framework\Database\Orm\Relations\MorphOneOrMany<TRelatedModel, TIntermediateModel>))  $callback
      * @return (
      *     $callback is string
-     *     ? \FluentBooking\Framework\Database\Orm\Relations\HasManyThrough<\FluentBooking\Framework\Database\Orm\Model, TIntermediateModel, TDeclaringModel>|\FluentBooking\Framework\Database\Orm\Relations\HasOneThrough<\FluentBooking\Framework\Database\Orm\Model, TIntermediateModel, TDeclaringModel>
+     *     ? \Adirectory\Framework\Database\Orm\Relations\HasManyThrough<\Adirectory\Framework\Database\Orm\Model, TIntermediateModel, TDeclaringModel>|\Adirectory\Framework\Database\Orm\Relations\HasOneThrough<\Adirectory\Framework\Database\Orm\Model, TIntermediateModel, TDeclaringModel>
      *     : (
-     *         $callback is callable(TIntermediateModel): \FluentBooking\Framework\Database\Orm\Relations\HasOne<TRelatedModel, TIntermediateModel>
-     *         ? \FluentBooking\Framework\Database\Orm\Relations\HasOneThrough<TRelatedModel, TIntermediateModel, TDeclaringModel>
-     *         : \FluentBooking\Framework\Database\Orm\Relations\HasManyThrough<TRelatedModel, TIntermediateModel, TDeclaringModel>
+     *         $callback is callable(TIntermediateModel): \Adirectory\Framework\Database\Orm\Relations\HasOne<TRelatedModel, TIntermediateModel>
+     *         ? \Adirectory\Framework\Database\Orm\Relations\HasOneThrough<TRelatedModel, TIntermediateModel, TDeclaringModel>
+     *         : \Adirectory\Framework\Database\Orm\Relations\HasManyThrough<TRelatedModel, TIntermediateModel, TDeclaringModel>
      *     )
      * )
      */

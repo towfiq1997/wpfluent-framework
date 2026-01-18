@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Concerns;
+namespace Adirectory\Framework\Database\Concerns;
 
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
 
 trait CompilesJsonPaths
 {

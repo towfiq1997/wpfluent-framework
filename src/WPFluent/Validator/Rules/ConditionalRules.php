@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Validator\Rules;
+namespace Adirectory\Framework\Validator\Rules;
 
-use FluentBooking\Framework\Support\Fluent;
+use Adirectory\Framework\Support\Fluent;
 
 class ConditionalRules
 {

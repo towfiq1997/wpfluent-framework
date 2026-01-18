@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Encryption;
+namespace Adirectory\Framework\Encryption;
 
 use RuntimeException;
 

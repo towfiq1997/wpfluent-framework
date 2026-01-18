@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query\Grammars;
+namespace Adirectory\Framework\Database\Query\Grammars;
 
-use FluentBooking\Framework\Database\Query\Builder;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Database\Query\Builder;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
 
 class SQLiteGrammar extends Grammar
 {
@@ -23,7 +23,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile the lock into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  bool|string  $value
      * @return string
      */
@@ -46,7 +46,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where like" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -79,7 +79,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where date" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -91,7 +91,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where day" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -103,7 +103,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where month" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -115,7 +115,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where year" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -127,7 +127,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a "where time" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -140,7 +140,7 @@ class SQLiteGrammar extends Grammar
      * Compile a date based where clause.
      *
      * @param  string  $type
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -154,8 +154,8 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile the index hints for the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Query\IndexHint  $indexHint
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\IndexHint  $indexHint
      * @return string
      */
     protected function compileIndexHint(Builder $query, $indexHint)
@@ -221,7 +221,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a group limit clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileGroupLimit(Builder $query)
@@ -240,7 +240,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile an update statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -256,7 +256,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile an insert ignore statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -268,7 +268,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile an insert ignore statement using a subquery into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $columns
      * @param  string  $sql
      * @return string
@@ -281,7 +281,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile the columns for an update statement.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -303,7 +303,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile an "upsert" statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @param  array  $uniqueBy
      * @param  array  $update
@@ -358,7 +358,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile an update statement with joins or limit into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -402,7 +402,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a delete statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     public function compileDelete(Builder $query)
@@ -417,7 +417,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a delete statement with joins or limit into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileDeleteWithJoinsOrLimit(Builder $query)
@@ -434,7 +434,7 @@ class SQLiteGrammar extends Grammar
     /**
      * Compile a truncate table statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return array
      */
     public function compileTruncate(Builder $query)

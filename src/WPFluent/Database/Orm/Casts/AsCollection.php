@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Casts;
+namespace Adirectory\Framework\Database\Orm\Casts;
 
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Database\Orm\Castable;
-use FluentBooking\Framework\Database\Orm\CastsAttributes;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Database\Orm\Castable;
+use Adirectory\Framework\Database\Orm\CastsAttributes;
 
 class AsCollection implements Castable
 {
@@ -13,7 +13,7 @@ class AsCollection implements Castable
      * Get the caster class to use when casting from / to this cast target.
      *
      * @param  array  $arguments
-     * @return \FluentBooking\Framework\Contracts\Database\Orm\CastsAttributes<\FluentBooking\Framework\Support\Collection<array-key, mixed>, iterable>
+     * @return \Adirectory\Framework\Contracts\Database\Orm\CastsAttributes<\Adirectory\Framework\Support\Collection<array-key, mixed>, iterable>
      */
     public static function castUsing(array $arguments)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use RuntimeException;
@@ -10,7 +10,7 @@ abstract class Facade
     /**
      * The application instance being facaded.
      *
-     * @var \FluentBooking\Framework\Foundation\Application
+     * @var \Adirectory\Framework\Foundation\Application
      */
     protected static $app;
 
@@ -109,7 +109,7 @@ abstract class Facade
     /**
      * Get the application instance behind the facade.
      *
-     * @return \FluentBooking\Framework\Foundation\Application
+     * @return \Adirectory\Framework\Foundation\Application
      */
     public static function getFacadeApplication()
     {
@@ -119,7 +119,7 @@ abstract class Facade
     /**
      * Set the application instance.
      *
-     * @param  \FluentBooking\Framework\Foundation\Application  $app
+     * @param  \Adirectory\Framework\Foundation\Application  $app
      * @return void
      */
     public static function setFacadeApplication($app)

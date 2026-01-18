@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use ArrayAccess;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\MacroableTrait;
 
 class Arr
 {
@@ -17,7 +17,7 @@ class Arr
      * Makes a collection from array
      * 
      * @param  array $array
-     * @return FluentBooking\Framework\Support\Collection
+     * @return Adirectory\Framework\Support\Collection
      */
     public static function of(array $array)
     {

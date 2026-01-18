@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
-use FluentBooking\Framework\Support\Arr;
+use Adirectory\Framework\Support\Arr;
 
 trait MessageBag
 {

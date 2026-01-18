@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 class Group
 {

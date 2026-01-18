@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
 use LogicException;
 use ReflectionClass;
@@ -8,23 +8,23 @@ use ReflectionMethod;
 use DateTimeInterface;
 use ReflectionNamedType;
 use InvalidArgumentException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\DateTime;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Database\Orm\Casts\Attribute;
-use FluentBooking\Framework\Database\Orm\Castable;
-use FluentBooking\Framework\Database\Orm\Casts\AsCollection;
-use FluentBooking\Framework\Database\Orm\Casts\AsArrayObject;
-use FluentBooking\Framework\Database\Orm\Relations\Relation;
-use FluentBooking\Framework\Database\Orm\InvalidCastException;
-use FluentBooking\Framework\Database\Orm\JsonEncodingException;
-use FluentBooking\Framework\Database\LazyLoadingViolationException;
-use FluentBooking\Framework\Database\Orm\CastsInboundAttributes;
-use FluentBooking\Framework\Support\Collection as BaseCollection;
-use FluentBooking\Framework\Database\Orm\MissingAttributeException;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\DateTime;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Database\Orm\Casts\Attribute;
+use Adirectory\Framework\Database\Orm\Castable;
+use Adirectory\Framework\Database\Orm\Casts\AsCollection;
+use Adirectory\Framework\Database\Orm\Casts\AsArrayObject;
+use Adirectory\Framework\Database\Orm\Relations\Relation;
+use Adirectory\Framework\Database\Orm\InvalidCastException;
+use Adirectory\Framework\Database\Orm\JsonEncodingException;
+use Adirectory\Framework\Database\LazyLoadingViolationException;
+use Adirectory\Framework\Database\Orm\CastsInboundAttributes;
+use Adirectory\Framework\Support\Collection as BaseCollection;
+use Adirectory\Framework\Database\Orm\MissingAttributeException;
 
 trait HasAttributes
 {
@@ -164,7 +164,7 @@ trait HasAttributes
     /**
      * The encrypter instance that is used to encrypt attributes.
      *
-     * @var \FluentBooking\Framework\Encryption\Encrypter
+     * @var \Adirectory\Framework\Encryption\Encrypter
      */
     public static $encrypter;
 
@@ -467,7 +467,7 @@ trait HasAttributes
      * @param  string  $key
      * @return null
      *
-     * @throws \FluentBooking\Framework\Database\Orm\MissingAttributeException
+     * @throws \Adirectory\Framework\Database\Orm\MissingAttributeException
      */
     protected function throwMissingAttributeExceptionIfApplicable($key)
     {
@@ -1256,7 +1256,7 @@ trait HasAttributes
     /**
      * Set the encrypter instance that will be used to encrypt attributes.
      *
-     * @param  \FluentBooking\Framework\Encryption\Encrypter  $encrypter
+     * @param  \Adirectory\Framework\Encryption\Encrypter  $encrypter
      * @return void
      */
     public static function encryptUsing($encrypter)
@@ -1300,7 +1300,7 @@ trait HasAttributes
      * Return a timestamp as DateTime object with time set to 00:00:00.
      *
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Support\DateTime;
+     * @return \Adirectory\Framework\Support\DateTime;
      */
     protected function asDate($value)
     {
@@ -1311,7 +1311,7 @@ trait HasAttributes
      * Return a timestamp as DateTime object.
      *
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Support\DateTime;
+     * @return \Adirectory\Framework\Support\DateTime;
      */
     protected function asDateTime($value)
     {
@@ -1521,7 +1521,7 @@ trait HasAttributes
      * @param  string  $key
      * @return bool
      *
-     * @throws \FluentBooking\Framework\Database\Orm\InvalidCastException
+     * @throws \Adirectory\Framework\Database\Orm\InvalidCastException
      */
     protected function isClassCastable($key)
     {
@@ -1571,7 +1571,7 @@ trait HasAttributes
      * @param  string  $key
      * @return bool
      *
-     * @throws \FluentBooking\Framework\Database\Orm\InvalidCastException
+     * @throws \Adirectory\Framework\Database\Orm\InvalidCastException
      */
     protected function isClassDeviable($key)
     {
@@ -1586,7 +1586,7 @@ trait HasAttributes
      * @param  string  $key
      * @return bool
      *
-     * @throws \FluentBooking\Framework\Database\Orm\InvalidCastException
+     * @throws \Adirectory\Framework\Database\Orm\InvalidCastException
      */
     protected function isClassSerializable($key)
     {

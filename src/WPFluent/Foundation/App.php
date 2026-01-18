@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
-use FluentBooking\Framework\Container\Contracts\BindingResolutionException;
+use Adirectory\Framework\Container\Contracts\BindingResolutionException;
 
 class App
 {
     /**
      * Application instance
      * 
-     * @var FluentBooking\Framework\Foundation\Application
+     * @var Adirectory\Framework\Foundation\Application
      */
     protected static $instance = null;
 
@@ -29,7 +29,7 @@ class App
     /**
      * Set the application instance
      * 
-     * @param FluentBooking\Framework\Foundation\Application $app
+     * @param Adirectory\Framework\Foundation\Application $app
      */
     public static function setInstance($app)
     {
@@ -41,7 +41,7 @@ class App
      * 
      * @param  string $module The binding/key name for a component.
      * @param  array $parameters constructor dependencies if any.
-     * @return FluentBooking\Framework\Foundation\Application|mixed
+     * @return Adirectory\Framework\Foundation\Application|mixed
      */
     public static function getInstance($module = null, $parameters = [])
     {
@@ -66,7 +66,7 @@ class App
      * 
      * @param  string $module The binding/key name for a component.
      * @param  array $parameters constructor dependencies if any.
-     * @return FluentBooking\Framework\Foundation\Application|mixed
+     * @return Adirectory\Framework\Foundation\Application|mixed
      */
     public static function make($module = null, $parameters = [])
     {

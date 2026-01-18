@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Foundation\App;
 
 class Path
 {

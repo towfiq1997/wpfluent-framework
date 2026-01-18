@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
 trait InteractsWithCleaningTrait
 {

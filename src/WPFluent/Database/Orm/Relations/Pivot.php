@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\AsPivot;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\AsPivot;
 
 class Pivot extends Model
 {

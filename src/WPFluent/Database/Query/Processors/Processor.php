@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query\Processors;
+namespace Adirectory\Framework\Database\Query\Processors;
 
-use FluentBooking\Framework\Database\Query\Builder;
+use Adirectory\Framework\Database\Query\Builder;
 
 class Processor
 {
     /**
      * Process the results of a "select" query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $results
      * @return array
      */
@@ -21,7 +21,7 @@ class Processor
     /**
      * Process an  "insert get ID" query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $sql
      * @param  array  $values
      * @param  string|null  $sequence

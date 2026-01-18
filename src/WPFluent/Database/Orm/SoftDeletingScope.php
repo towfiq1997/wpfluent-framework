@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 class SoftDeletingScope implements Scope
 {
@@ -14,8 +14,8 @@ class SoftDeletingScope implements Scope
     /**
      * Apply the scope to a given Orm query builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @return void
      */
     public function apply(Builder $builder, Model $model)
@@ -26,7 +26,7 @@ class SoftDeletingScope implements Scope
     /**
      * Extend the query builder with the needed functions.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     public function extend(Builder $builder)
@@ -47,7 +47,7 @@ class SoftDeletingScope implements Scope
     /**
      * Get the "deleted at" column for the builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return string
      */
     protected function getDeletedAtColumn(Builder $builder)
@@ -62,7 +62,7 @@ class SoftDeletingScope implements Scope
     /**
      * Add the restore extension to the builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     protected function addRestore(Builder $builder)
@@ -77,7 +77,7 @@ class SoftDeletingScope implements Scope
     /**
      * Add the with-trashed extension to the builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     protected function addWithTrashed(Builder $builder)
@@ -94,7 +94,7 @@ class SoftDeletingScope implements Scope
     /**
      * Add the without-trashed extension to the builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     protected function addWithoutTrashed(Builder $builder)
@@ -113,7 +113,7 @@ class SoftDeletingScope implements Scope
     /**
      * Add the only-trashed extension to the builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     protected function addOnlyTrashed(Builder $builder)

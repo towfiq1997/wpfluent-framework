@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
-use FluentBooking\Framework\Support\Arr;
+use Adirectory\Framework\Support\Arr;
 
 trait InteractsWithHeadersTrait
 {

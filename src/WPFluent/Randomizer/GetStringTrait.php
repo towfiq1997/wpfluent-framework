@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Randomizer;
+namespace Adirectory\Framework\Randomizer;
 
 use InvalidArgumentException;
 

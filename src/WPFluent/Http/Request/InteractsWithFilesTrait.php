@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Collection;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Collection;
 
 trait InteractsWithFilesTrait
 {
@@ -129,7 +129,7 @@ trait InteractsWithFilesTrait
      *
      * @param  string|null  $key
      * @param  mixed  $default
-     * @return \FluentBooking\Framework\Request\File|array|null
+     * @return \Adirectory\Framework\Request\File|array|null
      */
     public function file($key = null, $default = null)
     {

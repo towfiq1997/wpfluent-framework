@@ -1,22 +1,22 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
 use Closure;
 use LogicException;
 use ReflectionClass;
 use BadMethodCallException;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Validator\Rules\In;
-use FluentBooking\Framework\Validator\Rules\NotIn;
-use FluentBooking\Framework\Validator\Rules\Unique;
-use FluentBooking\Framework\Validator\Rules\Exists;
-use FluentBooking\Framework\Validator\Rules\RequiredIf;
-use FluentBooking\Framework\Validator\Rules\Dimensions;
-use FluentBooking\Framework\Validator\Rules\ConditionalRules;
-use FluentBooking\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Validator\Rules\In;
+use Adirectory\Framework\Validator\Rules\NotIn;
+use Adirectory\Framework\Validator\Rules\Unique;
+use Adirectory\Framework\Validator\Rules\Exists;
+use Adirectory\Framework\Validator\Rules\RequiredIf;
+use Adirectory\Framework\Validator\Rules\Dimensions;
+use Adirectory\Framework\Validator\Rules\ConditionalRules;
+use Adirectory\Framework\Support\ArrayableInterface;
 
 class Rule
 {
@@ -26,7 +26,7 @@ class Rule
      * @param  callable|bool  $condition
      * @param  array|string  $rules
      * @param  array|string  $defaultRules
-     * @return \FluentBooking\Framework\Validator\Rules\ConditionalRules
+     * @return \Adirectory\Framework\Validator\Rules\ConditionalRules
      */
     public static function when($condition, $rules, $defaultRules = [])
     {
@@ -37,7 +37,7 @@ class Rule
      * Get a dimensions constraint builder instance.
      *
      * @param  array  $constraints
-     * @return \FluentBooking\Framework\Validator\Rules\Dimensions
+     * @return \Adirectory\Framework\Validator\Rules\Dimensions
      */
     public static function dimensions(array $constraints = [])
     {
@@ -49,7 +49,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \FluentBooking\Framework\Validator\Rules\Exists
+     * @return \Adirectory\Framework\Validator\Rules\Exists
      */
     public static function exists($table, $column = 'NULL')
     {
@@ -60,7 +60,7 @@ class Rule
      * Get an in constraint builder instance.
      *
      * @param  \Illuminate\Contracts\Support\Arrayable|array|string  $values
-     * @return \FluentBooking\Framework\Validator\Rules\In
+     * @return \Adirectory\Framework\Validator\Rules\In
      */
     public static function in($values)
     {
@@ -75,7 +75,7 @@ class Rule
      * Get a not_in constraint builder instance.
      *
      * @param  \Illuminate\Contracts\Support\Arrayable|array|string  $values
-     * @return \FluentBooking\Framework\Validator\Rules\NotIn
+     * @return \Adirectory\Framework\Validator\Rules\NotIn
      */
     public static function notIn($values)
     {
@@ -90,7 +90,7 @@ class Rule
      * Get a required_if constraint builder instance.
      *
      * @param  callable|bool  $callback
-     * @return \FluentBooking\Framework\Validator\Rules\RequiredIf
+     * @return \Adirectory\Framework\Validator\Rules\RequiredIf
      */
     public static function requiredIf($callback)
     {
@@ -102,7 +102,7 @@ class Rule
      *
      * @param  string  $table
      * @param  string  $column
-     * @return \FluentBooking\Framework\Validator\Rules\Unique
+     * @return \Adirectory\Framework\Validator\Rules\Unique
      */
     public static function unique($table, $column = 'NULL')
     {

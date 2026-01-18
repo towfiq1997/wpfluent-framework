@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query\Processors;
+namespace Adirectory\Framework\Database\Query\Processors;
 
-use FluentBooking\Framework\Database\Query\Builder;
+use Adirectory\Framework\Database\Query\Builder;
 
 class MySqlProcessor extends Processor
 {

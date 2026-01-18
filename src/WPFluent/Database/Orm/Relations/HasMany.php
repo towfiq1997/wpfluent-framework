@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Collection;
 
 class HasMany extends HasOneOrMany
 {
@@ -53,7 +53,7 @@ class HasMany extends HasOneOrMany
      * Match the eagerly loaded results to their parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */

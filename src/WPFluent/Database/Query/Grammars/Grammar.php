@@ -1,16 +1,16 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query\Grammars;
+namespace Adirectory\Framework\Database\Query\Grammars;
 
 use RuntimeException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\BaseGrammar;
-use FluentBooking\Framework\Database\Query\Builder;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\Query\JoinClause;
-use FluentBooking\Framework\Database\Query\JoinLateralClause;
-use FluentBooking\Framework\Database\Concerns\CompilesJsonPaths;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\BaseGrammar;
+use Adirectory\Framework\Database\Query\Builder;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\Query\JoinClause;
+use Adirectory\Framework\Database\Query\JoinLateralClause;
+use Adirectory\Framework\Database\Concerns\CompilesJsonPaths;
 
 class Grammar extends BaseGrammar
 {
@@ -53,7 +53,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a select query into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     public function compileSelect(Builder $query)
@@ -101,7 +101,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the components necessary for a select clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return array
      */
     protected function compileComponents(Builder $query)
@@ -122,7 +122,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an aggregated select clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $aggregate
      * @return string
      */
@@ -145,7 +145,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "select *" portion of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $columns
      * @return string|null
      */
@@ -170,7 +170,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "from" portion of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $table
      * @return string
      */
@@ -182,7 +182,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "join" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $joins
      * @return string
      */
@@ -206,7 +206,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "lateral join" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\JoinLateralClause  $join
+     * @param  \Adirectory\Framework\Database\Query\JoinLateralClause  $join
      * @param  string  $expression
      * @return string
      *
@@ -220,7 +220,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "where" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     public function compileWheres(Builder $query)
@@ -245,7 +245,7 @@ class Grammar extends BaseGrammar
     /**
      * Get an array of all the where clauses for the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return array
      */
     protected function compileWheresToArray($query)
@@ -258,7 +258,7 @@ class Grammar extends BaseGrammar
     /**
      * Format the where clause statements into one string.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $sql
      * @return string
      */
@@ -272,7 +272,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a raw where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -284,7 +284,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a basic where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -300,7 +300,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a bitwise operator where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -312,7 +312,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where like" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -330,7 +330,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where in" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -346,7 +346,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where not in" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -364,7 +364,7 @@ class Grammar extends BaseGrammar
      *
      * For safety, whereIntegerInRaw ensures this method is only used with integer values.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -382,7 +382,7 @@ class Grammar extends BaseGrammar
      *
      * For safety, whereIntegerInRaw ensures this method is only used with integer values.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -398,7 +398,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where null" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -410,7 +410,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where not null" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -422,7 +422,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "between" where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -440,7 +440,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "between" where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -458,7 +458,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where date" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -470,7 +470,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where time" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -482,7 +482,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where day" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -494,7 +494,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where month" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -506,7 +506,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where year" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -519,7 +519,7 @@ class Grammar extends BaseGrammar
      * Compile a date based where clause.
      *
      * @param  string  $type
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -533,7 +533,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a where clause comparing two columns.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -545,7 +545,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a nested where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -562,7 +562,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a where condition with a sub-select.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -576,7 +576,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a where exists clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -588,7 +588,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a where exists clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -600,7 +600,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a where row values condition.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -616,7 +616,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where JSON boolean" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -634,7 +634,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where JSON contains" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -665,7 +665,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where JSON overlaps" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -707,7 +707,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where JSON contains key" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -736,7 +736,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where JSON length" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -778,7 +778,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a "where fulltext" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -790,7 +790,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a clause based on an expression.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $where
      * @return string
      */
@@ -802,7 +802,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "group by" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $groups
      * @return string
      */
@@ -814,7 +814,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "having" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileHavings(Builder $query)
@@ -955,7 +955,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "order by" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $orders
      * @return string
      */
@@ -971,7 +971,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the query orders to an array.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $orders
      * @return array
      */
@@ -996,7 +996,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "limit" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  int  $limit
      * @param  int|null  $offset
      * @return string
@@ -1015,7 +1015,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a group limit clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileGroupLimit(Builder $query)
@@ -1075,7 +1075,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "offset" portions of the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  int  $offset
      * @return string
      */
@@ -1087,7 +1087,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the "union" queries attached to the main query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileUnions(Builder $query)
@@ -1140,7 +1140,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a union aggregate query into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     protected function compileUnionAggregate(Builder $query)
@@ -1155,7 +1155,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an exists statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     public function compileExists(Builder $query)
@@ -1168,7 +1168,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an insert statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -1202,7 +1202,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an insert ignore statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      *
@@ -1216,7 +1216,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an insert and get ID statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @param  string  $sequence
      * @return string
@@ -1229,7 +1229,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an insert statement using a subquery into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $columns
      * @param  string  $sql
      * @return string
@@ -1248,7 +1248,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an insert ignore statement using a subquery into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $columns
      * @param  string  $sql
      * @return string
@@ -1263,7 +1263,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an update statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -1285,7 +1285,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the columns for an update statement.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
@@ -1299,7 +1299,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an update statement without joins into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $table
      * @param  string  $columns
      * @param  string  $where
@@ -1313,7 +1313,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an update statement with joins into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $table
      * @param  string  $columns
      * @param  string  $where
@@ -1329,7 +1329,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile an "upsert" statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  array  $values
      * @param  array  $uniqueBy
      * @param  array  $update
@@ -1363,7 +1363,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a delete statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return string
      */
     public function compileDelete(Builder $query)
@@ -1382,7 +1382,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a delete statement without joins into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $table
      * @param  string  $where
      * @return string
@@ -1395,7 +1395,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a delete statement with joins into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $table
      * @param  string  $where
      * @return string
@@ -1425,7 +1425,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile a truncate table statement into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return array
      */
     public function compileTruncate(Builder $query)
@@ -1436,7 +1436,7 @@ class Grammar extends BaseGrammar
     /**
      * Compile the lock into SQL.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  bool|string  $value
      * @return string
      */

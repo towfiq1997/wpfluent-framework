@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 trait Tappable
 {
@@ -8,7 +8,7 @@ trait Tappable
      * Call the given Closure with this instance then return the instance.
      *
      * @param  callable|null  $callback
-     * @return $this|\FluentBooking\Framework\Support\HigherOrderTapProxy
+     * @return $this|\Adirectory\Framework\Support\HigherOrderTapProxy
      */
     public function tap($callback = null)
     {

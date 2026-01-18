@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Exception;
 use JsonException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Stringable;
-use FluentBooking\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Stringable;
+use Adirectory\Framework\Support\MacroableTrait;
 
 class Str
 {
@@ -38,7 +38,7 @@ class Str
      * Get a new stringable object from the given string.
      *
      * @param  string  $string
-     * @return \FluentBooking\Framework\Support\Stringable
+     * @return \Adirectory\Framework\Support\Stringable
      */
     public static function of($string)
     {
@@ -903,7 +903,7 @@ class Str
      *
      * @param  string  $pattern
      * @param  string  $subject
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public static function matchAll($pattern, $subject)
     {

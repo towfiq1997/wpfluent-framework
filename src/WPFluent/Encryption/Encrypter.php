@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Encryption;
+namespace Adirectory\Framework\Encryption;
 
 use RuntimeException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Encryption\EncryptException;
-use FluentBooking\Framework\Encryption\DecryptException;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Encryption\EncryptException;
+use Adirectory\Framework\Encryption\DecryptException;
 
 class Encrypter
 {
@@ -106,7 +106,7 @@ class Encrypter
      * @param  bool  $serialize
      * @return string
      *
-     * @throws \FluentBooking\Framework\Encryption\EncryptException
+     * @throws \Adirectory\Framework\Encryption\EncryptException
      */
     public function encrypt($value, $serialize = true)
     {
@@ -143,7 +143,7 @@ class Encrypter
      * @param  string  $value
      * @return string
      *
-     * @throws \FluentBooking\Framework\Encryption\EncryptException
+     * @throws \Adirectory\Framework\Encryption\EncryptException
      */
     public function encryptString($value)
     {
@@ -157,7 +157,7 @@ class Encrypter
      * @param  bool  $unserialize
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Encryption\DecryptException
+     * @throws \Adirectory\Framework\Encryption\DecryptException
      */
     public function decrypt($payload, $unserialize = true)
     {
@@ -208,7 +208,7 @@ class Encrypter
      * @param  string  $payload
      * @return string
      *
-     * @throws \FluentBooking\Framework\Encryption\DecryptException
+     * @throws \Adirectory\Framework\Encryption\DecryptException
      */
     public function decryptString($payload)
     {
@@ -234,7 +234,7 @@ class Encrypter
      * @param  string  $payload
      * @return array
      *
-     * @throws \FluentBooking\Framework\Encryption\DecryptException
+     * @throws \Adirectory\Framework\Encryption\DecryptException
      */
     protected function getJsonPayload($payload)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Support\Str;
 
 /**
  * Class File

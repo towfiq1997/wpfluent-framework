@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 interface Castable
 {
@@ -9,7 +9,7 @@ interface Castable
      *
      * @param  array  $arguments
      * @return string
-     * @return string|\FluentBooking\Framework\Database\Orm\CastsAttributes|\FluentBooking\Framework\Database\Orm\CastsInboundAttributes
+     * @return string|\Adirectory\Framework\Database\Orm\CastsAttributes|\Adirectory\Framework\Database\Orm\CastsInboundAttributes
      */
     public static function castUsing(array $arguments);
 }

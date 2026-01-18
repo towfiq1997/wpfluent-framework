@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use Exception;
 use BadMethodCallException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Http\Request\File;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Http\Request\File;
 
 /**
  * @method mixed get(string $url, array $params = [])     Send a GET request.
@@ -283,7 +283,7 @@ class Client
 	 * 
 	 * @param  string $url
 	 * @param  array  $args
-	 * @return \FluentBooking\Framework\Http\Response
+	 * @return \Adirectory\Framework\Http\Response
 	 */
 	protected function request($url, $args = [])
 	{
@@ -309,7 +309,7 @@ class Client
 	 * Download a remote file.
 	 * 
 	 * @param  string $url
-	 * @return \FluentBooking\Framework\Http\Request\File
+	 * @return \Adirectory\Framework\Http\Request\File
 	 * @throws \Exception
 	 */
 	public function downloadFile($url)
@@ -348,7 +348,7 @@ class Client
 	 * @param  string $path
 	 * @param  array  $fields
 	 * @param  string $name
-	 * @return \FluentBooking\Framework\Http\Response
+	 * @return \Adirectory\Framework\Http\Response
 	 */
 	public function uploadFile($url, $path, $fields = [], $name = 'file')
 	{
@@ -396,7 +396,7 @@ class Client
 	 * Build a response object from an anonymous class.
 	 * 
 	 * @param  array $response
-	 * @return \FluentBooking\Framework\Http\Response
+	 * @return \Adirectory\Framework\Http\Response
 	 */
 	protected function makeResponse($response)
 	{

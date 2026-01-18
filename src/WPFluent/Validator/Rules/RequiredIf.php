@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Validator\Rules;
+namespace Adirectory\Framework\Validator\Rules;
 
 use InvalidArgumentException;
 

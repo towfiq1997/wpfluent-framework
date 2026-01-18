@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
-use FluentBooking\Framework\Http\Request\Request;
+use Adirectory\Framework\Http\Request\Request;
 
 abstract class Policy
 {

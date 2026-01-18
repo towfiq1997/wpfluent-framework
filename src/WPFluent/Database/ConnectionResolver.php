@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database;
+namespace Adirectory\Framework\Database;
 
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Database\ConnectionResolverInterface;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Database\ConnectionResolverInterface;
 
 class ConnectionResolver implements ConnectionResolverInterface
 {
@@ -38,7 +38,7 @@ class ConnectionResolver implements ConnectionResolverInterface
      * Get a database connection instance.
      *
      * @param  string|null  $name
-     * @return \FluentBooking\Framework\Database\ConnectionInterface
+     * @return \Adirectory\Framework\Database\ConnectionInterface
      */
     public function connection($name = null)
     {
@@ -61,7 +61,7 @@ class ConnectionResolver implements ConnectionResolverInterface
      * Add a connection to the resolver.
      *
      * @param  string  $name
-     * @param  \FluentBooking\Framework\Database\ConnectionInterface  $connection
+     * @param  \Adirectory\Framework\Database\ConnectionInterface  $connection
      * @return void
      */
     public function addConnection($name, ConnectionInterface $connection)

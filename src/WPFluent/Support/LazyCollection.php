@@ -1,16 +1,16 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use stdClass;
 use ArrayIterator;
 use DateTimeInterface;
 use IteratorAggregate;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\EnumeratesValues;
-use FluentBooking\Framework\Support\CanBeEscapedWhenCastToString;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\EnumeratesValues;
+use Adirectory\Framework\Support\CanBeEscapedWhenCastToString;
 
 class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
 {
@@ -1091,8 +1091,8 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
      * @param  mixed  $value
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Support\ItemNotFoundException
-     * @throws \FluentBooking\Framework\Support\MultipleItemsFoundException
+     * @throws \Adirectory\Framework\Support\ItemNotFoundException
+     * @throws \Adirectory\Framework\Support\MultipleItemsFoundException
      */
     public function sole($key = null, $operator = null, $value = null)
     {
@@ -1116,7 +1116,7 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
      * @param  mixed  $value
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Support\ItemNotFoundException
+     * @throws \Adirectory\Framework\Support\ItemNotFoundException
      */
     public function firstOrFail($key = null, $operator = null, $value = null)
     {

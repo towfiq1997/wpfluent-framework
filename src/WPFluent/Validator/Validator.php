@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Validator;
+namespace Adirectory\Framework\Validator;
 
 use Closure;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Foundation\App;
 
 class Validator
 {
@@ -111,7 +111,7 @@ class Validator
      * @param array $rules
      * @param array $messages
      *
-     * @return \FluentBooking\Framework\Validator\Validator
+     * @return \Adirectory\Framework\Validator\Validator
      */
     public static function make(array $data, array $rules = [], array $messages = [])
     {

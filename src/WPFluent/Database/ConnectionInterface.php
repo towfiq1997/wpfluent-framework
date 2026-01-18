@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database;
+namespace Adirectory\Framework\Database;
 
 use Closure;
 
@@ -9,9 +9,9 @@ interface ConnectionInterface
     /**
      * Begin a fluent query against a database table.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $table
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $table
      * @param  string|null  $as
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function table($table, $as = null);
 
@@ -19,7 +19,7 @@ interface ConnectionInterface
      * Get a new raw query expression.
      *
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Query\Expression
+     * @return \Adirectory\Framework\Database\Query\Expression
      */
     public function raw($value);
 
@@ -41,7 +41,7 @@ interface ConnectionInterface
      * @param  bool  $useReadPdo
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Database\MultipleColumnsSelectedException
+     * @throws \Adirectory\Framework\Database\MultipleColumnsSelectedException
      */
     public function scalar($query, $bindings = [], $useReadPdo = true);
 

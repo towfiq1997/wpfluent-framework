@@ -1,16 +1,16 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 /**
- * @mixin \FluentBooking\Framework\Database\Orm\Builder
+ * @mixin \Adirectory\Framework\Database\Orm\Builder
  */
 class HigherOrderBuilderProxy
 {
     /**
      * The collection being operated on.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Builder
+     * @var \Adirectory\Framework\Database\Orm\Builder
      */
     protected $builder;
 
@@ -24,7 +24,7 @@ class HigherOrderBuilderProxy
     /**
      * Create a new proxy instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @param  string  $method
      * @return void
      */

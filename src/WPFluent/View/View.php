@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\View;
+namespace Adirectory\Framework\View;
 
 use Exception;
 
@@ -8,7 +8,7 @@ class View
 {
 	/**
      * Application Instance
-     * @var FluentBooking\Framework\Foundation\Application
+     * @var Adirectory\Framework\Foundation\Application
      */
 	protected $app;
 

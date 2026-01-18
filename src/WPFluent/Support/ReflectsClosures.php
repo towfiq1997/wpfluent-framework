@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use RuntimeException;
 use ReflectionFunction;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Reflector;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Reflector;
 
 trait ReflectsClosures
 {

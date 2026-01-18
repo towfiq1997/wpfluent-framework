@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
 
 class HasOneThrough extends HasOneOrManyThrough
 {
@@ -41,7 +41,7 @@ class HasOneThrough extends HasOneOrManyThrough
      * Match the eagerly loaded results to their parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -67,8 +67,8 @@ class HasOneThrough extends HasOneOrManyThrough
     /**
      * Make a new related instance for the given model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function newRelatedInstanceFor(Model $parent)
     {

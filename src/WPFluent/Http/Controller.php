@@ -1,29 +1,29 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use WP_REST_Response;
 use ReflectionException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Validator\ValidationException;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Validator\ValidationException;
 
 abstract class Controller
 {
     /**
      * Application Instance
-     * @var \FluentBooking\Framework\Foundation\Application
+     * @var \Adirectory\Framework\Foundation\Application
      */
     protected $app = null;
 
     /**
      * Request Instane
-     * @var \FluentBooking\Framework\Request\Request
+     * @var \Adirectory\Framework\Request\Request
      */
     protected $request = null;
 
     /**
      * Response Instane
-     * @var \FluentBooking\Framework\Response\Response
+     * @var \Adirectory\Framework\Response\Response
      */
     protected $response = null;
 

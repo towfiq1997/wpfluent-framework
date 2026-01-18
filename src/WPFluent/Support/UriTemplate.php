@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 /**
  * Expands URI templates. Userland implementation of PECL uri_template.

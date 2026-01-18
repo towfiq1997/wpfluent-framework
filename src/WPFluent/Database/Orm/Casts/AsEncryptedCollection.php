@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Casts;
+namespace Adirectory\Framework\Database\Orm\Casts;
 
 use InvalidArgumentException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Database\Orm\Castable;
-use FluentBooking\Framework\Database\Orm\CastsAttributes;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Database\Orm\Castable;
+use Adirectory\Framework\Database\Orm\CastsAttributes;
 
 class AsEncryptedCollection implements Castable
 {

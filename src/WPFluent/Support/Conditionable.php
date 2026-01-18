@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
-use FluentBooking\Framework\Support\HigherOrderWhenProxy;
+use Adirectory\Framework\Support\HigherOrderWhenProxy;
 
 trait Conditionable
 {

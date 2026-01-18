@@ -1,21 +1,21 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
 use Closure;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Database\Orm\ModelNotFoundException;
-use FluentBooking\Framework\Database\Query\Grammars\MySqlGrammar;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\AsPivot;
-use FluentBooking\Framework\Database\UniqueConstraintViolationException;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithPivotTable;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Database\Orm\ModelNotFoundException;
+use Adirectory\Framework\Database\Query\Grammars\MySqlGrammar;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\AsPivot;
+use Adirectory\Framework\Database\UniqueConstraintViolationException;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithPivotTable;
 
 class BelongsToMany extends Relation
 {
@@ -66,7 +66,7 @@ class BelongsToMany extends Relation
     /**
      * The pivot table columns to retrieve.
      *
-     * @var array<string|\FluentBooking\Framework\Database\Query\Expression>
+     * @var array<string|\Adirectory\Framework\Database\Query\Expression>
      */
     protected $pivotColumns = [];
 
@@ -136,7 +136,7 @@ class BelongsToMany extends Relation
     /**
      * Create a new belongs to many relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Eloquent\Builder<TRelatedModel>  $query
+     * @param  \Adirectory\Framework\Database\Eloquent\Builder<TRelatedModel>  $query
      * @param  TDeclaringModel  $parent
      * @param  string|class-string<TRelatedModel>  $table
      * @param  string  $foreignPivotKey
@@ -208,7 +208,7 @@ class BelongsToMany extends Relation
     /**
      * Set the join clause for the relation query.
      *
-     * @param  \FluentBooking\Framework\Database\Eloquent\Builder<TRelatedModel>|null  $query
+     * @param  \Adirectory\Framework\Database\Eloquent\Builder<TRelatedModel>|null  $query
      * @return $this
      */
     protected function performJoin($query = null)
@@ -288,7 +288,7 @@ class BelongsToMany extends Relation
     /**
      * Build model dictionary keyed by the relation's foreign key.
      *
-     * @param  \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel>  $results
+     * @param  \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel>  $results
      * @return array<array<string, TRelatedModel>>
      */
     protected function buildDictionary(Collection $results)
@@ -346,7 +346,7 @@ class BelongsToMany extends Relation
     /**
      * Set a where clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -362,7 +362,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where between" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  array  $values
      * @param  string  $boolean
      * @param  bool  $not
@@ -376,7 +376,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "or where between" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  array  $values
      * @return $this
      */
@@ -388,7 +388,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where pivot not between" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  array  $values
      * @param  string  $boolean
      * @return $this
@@ -401,7 +401,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "or where not between" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  array  $values
      * @return $this
      */
@@ -413,7 +413,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where in" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $values
      * @param  string  $boolean
      * @param  bool  $not
@@ -429,7 +429,7 @@ class BelongsToMany extends Relation
     /**
      * Set an "or where" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -444,7 +444,7 @@ class BelongsToMany extends Relation
      *
      * In addition, new pivot records will receive this value.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression|array<string, string>  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression|array<string, string>  $column
      * @param  mixed  $value
      * @return $this
      *
@@ -484,7 +484,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where not in" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $values
      * @param  string  $boolean
      * @return $this
@@ -509,7 +509,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where null" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  string  $boolean
      * @param  bool  $not
      * @return $this
@@ -524,7 +524,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "where not null" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  string  $boolean
      * @return $this
      */
@@ -536,7 +536,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "or where null" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  bool  $not
      * @return $this
      */
@@ -548,7 +548,7 @@ class BelongsToMany extends Relation
     /**
      * Set a "or where not null" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @return $this
      */
     public function orWherePivotNotNull($column)
@@ -559,7 +559,7 @@ class BelongsToMany extends Relation
     /**
      * Add an "order by" clause for a pivot table column.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  string  $direction
      * @return $this
      */
@@ -573,7 +573,7 @@ class BelongsToMany extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return ($id is (\FluentBooking\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel)
+     * @return ($id is (\Adirectory\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel)
      */
     public function findOrNew($id, $columns = ['*'])
     {
@@ -683,7 +683,7 @@ class BelongsToMany extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return ($id is (\FluentBooking\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel|null)
+     * @return ($id is (\Adirectory\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel|null)
      */
     public function find($id, $columns = ['*'])
     {
@@ -699,9 +699,9 @@ class BelongsToMany extends Relation
     /**
      * Find multiple related models by their primary keys.
      *
-     * @param  \FluentBooking\Framework\Support\ArrayableInterface|array  $ids
+     * @param  \Adirectory\Framework\Support\ArrayableInterface|array  $ids
      * @param  array  $columns
-     * @return \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel>
      */
     public function findMany($ids, $columns = ['*'])
     {
@@ -721,9 +721,9 @@ class BelongsToMany extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return ($id is (\FluentBooking\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel)
+     * @return ($id is (\Adirectory\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel> : TRelatedModel)
      *
-     * @throws \FluentBooking\Framework\Database\Eloquent\ModelNotFoundException<TRelatedModel>
+     * @throws \Adirectory\Framework\Database\Eloquent\ModelNotFoundException<TRelatedModel>
      */
     public function findOrFail($id, $columns = ['*'])
     {
@@ -751,8 +751,8 @@ class BelongsToMany extends Relation
      * @param  (\Closure(): TValue)|list<string>|string  $columns
      * @param  (\Closure(): TValue)|null  $callback
      * @return (
-     *     $id is (\FluentBooking\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>)
-     *     ? \FluentBooking\Framework\Database\Eloquent\Collection<int, TRelatedModel>|TValue
+     *     $id is (\Adirectory\Framework\Support\ArrayableInterface<array-key, mixed>|array<mixed>)
+     *     ? \Adirectory\Framework\Database\Eloquent\Collection<int, TRelatedModel>|TValue
      *     : TRelatedModel|TValue
      * )
      */
@@ -812,7 +812,7 @@ class BelongsToMany extends Relation
      * @param  array  $columns
      * @return TRelatedModel
      *
-     * @throws \FluentBooking\Framework\Database\Eloquent\ModelNotFoundException<TRelatedModel>
+     * @throws \Adirectory\Framework\Database\Eloquent\ModelNotFoundException<TRelatedModel>
      */
     public function firstOrFail($columns = ['*'])
     {
@@ -921,7 +921,7 @@ class BelongsToMany extends Relation
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \FluentBooking\Framework\Pagination\LengthAwarePaginator
+     * @return \Adirectory\Framework\Pagination\LengthAwarePaginator
      */
     public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
@@ -939,7 +939,7 @@ class BelongsToMany extends Relation
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \FluentBooking\Framework\Pagination\Paginator
+     * @return \Adirectory\Framework\Pagination\Paginator
      */
     public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
@@ -957,7 +957,7 @@ class BelongsToMany extends Relation
      * @param  array  $columns
      * @param  string  $cursorName
      * @param  string|null  $cursor
-     * @return \FluentBooking\Framework\Pagination\CursorPaginator
+     * @return \Adirectory\Framework\Pagination\CursorPaginator
      */
     public function cursorPaginate($perPage = null, $columns = ['*'], $cursorName = 'cursor', $cursor = null)
     {
@@ -1079,7 +1079,7 @@ class BelongsToMany extends Relation
      * Query lazily, by chunks of the given size.
      *
      * @param  int  $chunkSize
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazy($chunkSize = 1000)
     {
@@ -1096,7 +1096,7 @@ class BelongsToMany extends Relation
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazyById($chunkSize = 1000, $column = null, $alias = null)
     {
@@ -1119,7 +1119,7 @@ class BelongsToMany extends Relation
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazyByIdDesc($chunkSize = 1000, $column = null, $alias = null)
     {
@@ -1139,7 +1139,7 @@ class BelongsToMany extends Relation
     /**
      * Get a lazy collection for the given query.
      *
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function cursor()
     {
@@ -1153,7 +1153,7 @@ class BelongsToMany extends Relation
     /**
      * Prepare the query builder for query execution.
      *
-     * @return \FluentBooking\Framework\Database\Eloquent\Builder<TRelatedModel>
+     * @return \Adirectory\Framework\Database\Eloquent\Builder<TRelatedModel>
      */
     protected function prepareQueryBuilder()
     {
@@ -1266,7 +1266,7 @@ class BelongsToMany extends Relation
     /**
      * Get all of the IDs for the related models.
      *
-     * @return \FluentBooking\Framework\Support\Collection<int, int|string>
+     * @return \Adirectory\Framework\Support\Collection<int, int|string>
      */
     public function allRelatedIds()
     {
@@ -1308,7 +1308,7 @@ class BelongsToMany extends Relation
     /**
      * Save an array of new models and attach them to the parent model.
      *
-     * @template TContainer of \FluentBooking\Framework\Support\Collection<array-key, TRelatedModel>|array<array-key, TRelatedModel>
+     * @template TContainer of \Adirectory\Framework\Support\Collection<array-key, TRelatedModel>|array<array-key, TRelatedModel>
      *
      * @param  TContainer  $models
      * @param  array  $pivotAttributes
@@ -1328,7 +1328,7 @@ class BelongsToMany extends Relation
     /**
      * Save an array of new models without raising any events and attach them to the parent model.
      *
-     * @template TContainer of \FluentBooking\Framework\Support\Collection<array-key, TRelatedModel>|array<array-key, TRelatedModel>
+     * @template TContainer of \Adirectory\Framework\Support\Collection<array-key, TRelatedModel>|array<array-key, TRelatedModel>
      *
      * @param  TContainer  $models
      * @param  array  $pivotAttributes
@@ -1398,10 +1398,10 @@ class BelongsToMany extends Relation
     /**
      * Add the constraints for a relationship query on the same table.
      *
-     * @param  \FluentBooking\Framework\Database\Eloquent\Builder<TRelatedModel>  $query
-     * @param  \FluentBooking\Framework\Database\Eloquent\Builder<TDeclaringModel>  $parentQuery
+     * @param  \Adirectory\Framework\Database\Eloquent\Builder<TRelatedModel>  $query
+     * @param  \Adirectory\Framework\Database\Eloquent\Builder<TDeclaringModel>  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Eloquent\Builder<TRelatedModel>
+     * @return \Adirectory\Framework\Database\Eloquent\Builder<TRelatedModel>
      */
     public function getRelationExistenceQueryForSelfJoin(Builder $query, Builder $parentQuery, $columns = ['*'])
     {
@@ -1622,8 +1622,8 @@ class BelongsToMany extends Relation
     /**
      * Qualify the given column name by the pivot table.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
-     * @return string|\FluentBooking\Framework\Database\Query\Expression
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
+     * @return string|\Adirectory\Framework\Database\Query\Expression
      */
     public function qualifyPivotColumn($column)
     {

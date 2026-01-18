@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 use Countable;
 use ArrayAccess;
 use JsonSerializable;
 use IteratorAggregate;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\JsonableInterface;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Pagination\PaginatorInterface;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\JsonableInterface;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Pagination\PaginatorInterface;
 
 class Paginator extends AbstractPaginator implements ArrayableInterface, ArrayAccess, Countable, IteratorAggregate, JsonSerializable, JsonableInterface, PaginatorInterface
 {

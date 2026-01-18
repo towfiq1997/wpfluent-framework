@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Validator\ValidationException;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Validator\ValidationException;
 
 abstract class RequestGuard
 {
@@ -49,7 +49,7 @@ abstract class RequestGuard
      * @param  array $rules Optional
      * @param  array $messages Optional
      * @return array Request Data
-     * @throws FluentBooking\Framework\Validator\ValidationException
+     * @throws Adirectory\Framework\Validator\ValidationException
      */
     public function validate($rules = [], $messages = [])
     {
@@ -98,7 +98,7 @@ abstract class RequestGuard
     /**
      * Handles validation including before and after calls
      *
-     * @throws FluentBooking\Framework\Validator\ValidationException
+     * @throws Adirectory\Framework\Validator\ValidationException
      * @return null
      */
     public static function applyValidation()

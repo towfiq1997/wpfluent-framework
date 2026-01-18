@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
 use Exception;
 use WP_Error;

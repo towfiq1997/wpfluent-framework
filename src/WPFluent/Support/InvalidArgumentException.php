@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use ReflectionClass;
-use FluentBooking\Framework\Support\ExceptionInterface;
+use Adirectory\Framework\Support\ExceptionInterface;
 use InvalidArgumentException as BaseInvalidArgumentException;
 
 use function sprintf;

@@ -4,22 +4,22 @@
  * WPDB Connection
  */
 
-namespace FluentBooking\Framework\Database\Query;
+namespace Adirectory\Framework\Database\Query;
 
 use Closure;
 use Exception;
 use DateTimeInterface;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Database\Schema;
-use FluentBooking\Framework\Database\QueryException;
-use FluentBooking\Framework\Database\ConnectionInterface;
-use FluentBooking\Framework\Database\Events\QueryExecuted;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\Query\Processors\MySqlProcessor;
-use FluentBooking\Framework\Database\Query\Processors\SQLiteProcessor;
-use FluentBooking\Framework\Database\Query\Builder as QueryBuilder;
-use FluentBooking\Framework\Database\Query\Grammars\MySqlGrammar;
-use FluentBooking\Framework\Database\Query\Grammars\SQLiteGrammar;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Database\Schema;
+use Adirectory\Framework\Database\QueryException;
+use Adirectory\Framework\Database\ConnectionInterface;
+use Adirectory\Framework\Database\Events\QueryExecuted;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\Query\Processors\MySqlProcessor;
+use Adirectory\Framework\Database\Query\Processors\SQLiteProcessor;
+use Adirectory\Framework\Database\Query\Builder as QueryBuilder;
+use Adirectory\Framework\Database\Query\Grammars\MySqlGrammar;
+use Adirectory\Framework\Database\Query\Grammars\SQLiteGrammar;
 
 class WPDBConnection implements ConnectionInterface
 {
@@ -53,14 +53,14 @@ class WPDBConnection implements ConnectionInterface
     /**
      * The query grammar implementation.
      *
-     * @var \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @var \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     protected $queryGrammar;
 
     /**
      * The query post processor implementation.
      *
-     * @var \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @var \Adirectory\Framework\Database\Query\Processors\Processor
      */
     protected $postProcessor;
 
@@ -74,7 +74,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * The event dispatcher.
      *
-     * @var FluentBooking\Framework\Events
+     * @var Adirectory\Framework\Events
      */
     protected $event = null;
 
@@ -140,7 +140,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Get the default query grammar instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @return \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     protected function getDefaultQueryGrammar()
     {
@@ -160,7 +160,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Get the default post processor instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @return \Adirectory\Framework\Database\Query\Processors\Processor
      */
     protected function getDefaultPostProcessor()
     {
@@ -170,9 +170,9 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Begin a fluent query against a database table.
      *
-     * @param \Closure|\FluentBooking\Framework\Database\Query\Builder|string $table
+     * @param \Closure|\Adirectory\Framework\Database\Query\Builder|string $table
      * @param string|null $as
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function table($table, $as = null)
     {
@@ -182,7 +182,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Get a new query builder instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function query()
     {
@@ -224,7 +224,7 @@ class WPDBConnection implements ConnectionInterface
      * @param bool $useReadPdo
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Database\MultipleColumnsSelectedException
+     * @throws \Adirectory\Framework\Database\MultipleColumnsSelectedException
      */
     public function scalar($query, $bindings = [], $useReadPdo = true)
     {
@@ -585,7 +585,7 @@ class WPDBConnection implements ConnectionInterface
      * Get a new raw query expression.
      *
      * @param mixed $value
-     * @return \FluentBooking\Framework\Database\Query\Expression
+     * @return \Adirectory\Framework\Database\Query\Expression
      */
     public function raw($value)
     {
@@ -595,7 +595,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Get the query grammar used by the connection.
      *
-     * @return \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @return \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     public function getQueryGrammar()
     {
@@ -607,7 +607,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Set the query grammar used by the connection.
      *
-     * @param \FluentBooking\Framework\Database\Query\Grammars\Grammar $grammar
+     * @param \Adirectory\Framework\Database\Query\Grammars\Grammar $grammar
      * @return $this
      */
     public function setQueryGrammar(Grammar $grammar)
@@ -620,7 +620,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Get the query post processor used by the connection.
      *
-     * @return \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @return \Adirectory\Framework\Database\Query\Processors\Processor
      */
     public function getPostProcessor()
     {
@@ -630,7 +630,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Set the query post processor used by the connection.
      *
-     * @param \FluentBooking\Framework\Database\Query\Processors\Processor $processor
+     * @param \Adirectory\Framework\Database\Query\Processors\Processor $processor
      * @return $this
      */
     public function setPostProcessor(Processor $processor)
@@ -655,7 +655,7 @@ class WPDBConnection implements ConnectionInterface
     /**
      * Return self as PDO, the Processor instance uses it.
      *
-     * @return \FluentBooking\Framework\Database\Query\WPDBConnection
+     * @return \Adirectory\Framework\Database\Query\WPDBConnection
      */
     public function getPdo()
     {

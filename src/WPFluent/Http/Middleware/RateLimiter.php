@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Middleware;
+namespace Adirectory\Framework\Http\Middleware;
 
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Foundation\App;
 
 class RateLimiter
 {
@@ -35,7 +35,7 @@ class RateLimiter
     /**
      * Handle an incoming request and apply rate limiting.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * @param callable $next
      * 
      * @return mixed
@@ -66,7 +66,7 @@ class RateLimiter
     /**
      * Determine if the request should bypass rate limiting.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * 
      * @return bool
      */
@@ -80,7 +80,7 @@ class RateLimiter
     /**
      * Get the current rate limit settings for the request.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * @param int $currentTime
      * 
      * @return array
@@ -131,7 +131,7 @@ class RateLimiter
     /**
      * Retrieve the transient data for the current request's rate limit.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * 
      * @return array|null
      */
@@ -143,7 +143,7 @@ class RateLimiter
     /**
      * Update the rate limit settings in the transient storage.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * @param array $settings
      * 
      * @return void
@@ -158,7 +158,7 @@ class RateLimiter
     /**
      * Generate a unique transient key for the current request.
      *
-     * @param \FluentBooking\Framework\Http\Request $request
+     * @param \Adirectory\Framework\Http\Request $request
      * 
      * @return string
      */

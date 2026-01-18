@@ -1,12 +1,12 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Countable;
 use JsonSerializable;
 use IteratorAggregate;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Support\JsonableInterface;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Support\JsonableInterface;
 
 interface Enumerable extends ArrayableInterface, Countable, IteratorAggregate, JsonableInterface, JsonSerializable
 {
@@ -996,7 +996,7 @@ interface Enumerable extends ArrayableInterface, Countable, IteratorAggregate, J
     /**
      * Collect the values into a collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function collect();
 

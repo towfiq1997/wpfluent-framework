@@ -1,22 +1,22 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
-use FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface;
+use Adirectory\Framework\Pagination\LengthAwarePaginatorInterface;
 
 class UrlWindow
 {
     /**
      * The paginator implementation.
      *
-     * @var \FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface
+     * @var \Adirectory\Framework\Pagination\LengthAwarePaginatorInterface
      */
     protected $paginator;
 
     /**
      * Create a new URL window instance.
      *
-     * @param  \FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface  $paginator
+     * @param  \Adirectory\Framework\Pagination\LengthAwarePaginatorInterface  $paginator
      * @return void
      */
     public function __construct(LengthAwarePaginatorInterface $paginator)
@@ -27,7 +27,7 @@ class UrlWindow
     /**
      * Create a new URL window instance.
      *
-     * @param  \FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface  $paginator
+     * @param  \Adirectory\Framework\Pagination\LengthAwarePaginatorInterface  $paginator
      * @return array
      */
     public static function make(LengthAwarePaginatorInterface $paginator)

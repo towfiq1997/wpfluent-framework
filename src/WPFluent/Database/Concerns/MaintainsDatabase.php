@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Concerns;
+namespace Adirectory\Framework\Database\Concerns;
 
 trait MaintainsDatabase
 {

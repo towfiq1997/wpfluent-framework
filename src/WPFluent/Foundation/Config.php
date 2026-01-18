@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
-use FluentBooking\Framework\Support\Arr;
+use Adirectory\Framework\Support\Arr;
 
 class Config
 {

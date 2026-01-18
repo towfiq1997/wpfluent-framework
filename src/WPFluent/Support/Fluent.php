@@ -1,10 +1,10 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use ArrayAccess;
 use JsonSerializable;
-use FluentBooking\Framework\Support\Helper;
+use Adirectory\Framework\Support\Helper;
 
 class Fluent implements ArrayableInterface, ArrayAccess, JsonableInterface, JsonSerializable
 {

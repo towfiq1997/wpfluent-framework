@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Support\Str;
 
 /**
- * Class FluentBooking\Framework\Framework\Http\Request\WPUserProxy
+ * Class Adirectory\Framework\Framework\Http\Request\WPUserProxy
  * 
  * @method void __construct() Constructs the class
  * @method void init() Initializes the object

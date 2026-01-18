@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Query;
+namespace Adirectory\Framework\Database\Query;
 
 use Closure;
 use DatePeriod;
@@ -8,24 +8,24 @@ use LogicException;
 use RuntimeException;
 use DateTimeInterface;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Pagination\Paginator;
-use FluentBooking\Framework\Support\ForwardsCalls;
-use FluentBooking\Framework\Support\LazyCollection;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\Query\Grammars\Grammar;
-use FluentBooking\Framework\Database\Query\Processors\Processor;
-use FluentBooking\Framework\Database\Query\ConditionExpression;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Database\ConnectionInterface;
-use FluentBooking\Framework\Database\Concerns\BuildsQueries;
-use FluentBooking\Framework\Database\Concerns\ExplainsQueries;
-use FluentBooking\Framework\Database\Orm\Relations\Relation;
-use FluentBooking\Framework\Database\Orm\Builder as OrmBuilder;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Pagination\Paginator;
+use Adirectory\Framework\Support\ForwardsCalls;
+use Adirectory\Framework\Support\LazyCollection;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\Query\Grammars\Grammar;
+use Adirectory\Framework\Database\Query\Processors\Processor;
+use Adirectory\Framework\Database\Query\ConditionExpression;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Database\ConnectionInterface;
+use Adirectory\Framework\Database\Concerns\BuildsQueries;
+use Adirectory\Framework\Database\Concerns\ExplainsQueries;
+use Adirectory\Framework\Database\Orm\Relations\Relation;
+use Adirectory\Framework\Database\Orm\Builder as OrmBuilder;
 
 class Builder
 {
@@ -36,21 +36,21 @@ class Builder
     /**
      * The database connection instance.
      *
-     * @var \FluentBooking\Framework\Database\ConnectionInterface
+     * @var \Adirectory\Framework\Database\ConnectionInterface
      */
     public $connection;
 
     /**
      * The database query grammar instance.
      *
-     * @var \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @var \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     public $grammar;
 
     /**
      * The database query post processor instance.
      *
-     * @var \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @var \Adirectory\Framework\Database\Query\Processors\Processor
      */
     public $processor;
 
@@ -104,7 +104,7 @@ class Builder
     /**
      * The index hint for the query.
      *
-     * @var \FluentBooking\Framework\Database\Query\IndexHint
+     * @var \Adirectory\Framework\Database\Query\IndexHint
      */
     public $indexHint;
 
@@ -253,9 +253,9 @@ class Builder
     /**
      * Create a new query builder instance.
      *
-     * @param  \FluentBooking\Framework\Database\ConnectionInterface  $connection
-     * @param  \FluentBooking\Framework\Database\Query\Grammars\Grammar|null  $grammar
-     * @param  \FluentBooking\Framework\Database\Query\Processors\Processor|null  $processor
+     * @param  \Adirectory\Framework\Database\ConnectionInterface  $connection
+     * @param  \Adirectory\Framework\Database\Query\Grammars\Grammar|null  $grammar
+     * @param  \Adirectory\Framework\Database\Query\Processors\Processor|null  $processor
      * @return void
      */
     public function __construct(
@@ -295,7 +295,7 @@ class Builder
     /**
      * Add a subselect expression to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @return $this
      *
@@ -331,7 +331,7 @@ class Builder
     /**
      * Makes "from" fetch from a subquery.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $query
      * @param  string  $as
      * @return $this
      *
@@ -363,7 +363,7 @@ class Builder
     /**
      * Creates a subquery and parse it.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $query
      * @return array
      */
     protected function createSub($query)
@@ -474,7 +474,7 @@ class Builder
     /**
      * Set the table which the query is targeting.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $table
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $table
      * @param  string|null  $as
      * @return $this
      */
@@ -586,7 +586,7 @@ class Builder
     /**
      * Add a subquery join clause to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @param  \Closure|string  $first
      * @param  string|null  $operator
@@ -611,7 +611,7 @@ class Builder
     /**
      * Add a lateral join clause to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @param  string  $type
      * @return $this
@@ -632,7 +632,7 @@ class Builder
     /**
      * Add a lateral left join to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @return $this
      */
@@ -672,7 +672,7 @@ class Builder
     /**
      * Add a subquery left join to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @param  \Closure|string  $first
      * @param  string|null  $operator
@@ -715,7 +715,7 @@ class Builder
     /**
      * Add a subquery right join to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Orm\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Orm\Builder|string  $query
      * @param  string  $as
      * @param  \Closure|string  $first
      * @param  string|null  $operator
@@ -750,7 +750,7 @@ class Builder
     /**
      * Add a subquery cross join to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $query
      * @param  string  $as
      * @return $this
      */
@@ -770,10 +770,10 @@ class Builder
     /**
      * Get a new join clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Query\Builder  $parentQuery
      * @param  string  $type
      * @param  string  $table
-     * @return \FluentBooking\Framework\Database\Query\JoinClause
+     * @return \Adirectory\Framework\Database\Query\JoinClause
      */
     protected function newJoinClause(self $parentQuery, $type, $table)
     {
@@ -783,10 +783,10 @@ class Builder
     /**
      * Get a new join lateral clause.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Query\Builder  $parentQuery
      * @param  string  $type
      * @param  string  $table
-     * @return \FluentBooking\Framework\Database\Query\JoinLateralClause
+     * @return \Adirectory\Framework\Database\Query\JoinLateralClause
      */
     protected function newJoinLateralClause(self $parentQuery, $type, $table)
     {
@@ -1020,7 +1020,7 @@ class Builder
     /**
      * Add a basic "where not" clause to the query.
      *
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -1044,7 +1044,7 @@ class Builder
     /**
      * Add an "or where not" clause to the query.
      *
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -1136,7 +1136,7 @@ class Builder
     /**
      * Add a "where like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @param  string  $boolean
@@ -1174,7 +1174,7 @@ class Builder
     /**
      * Add an "or where like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @return $this
@@ -1187,7 +1187,7 @@ class Builder
     /**
      * Add a "where not like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @param  string  $boolean
@@ -1205,7 +1205,7 @@ class Builder
     /**
      * Add an "or where not like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @return $this
@@ -1218,7 +1218,7 @@ class Builder
     /**
      * Add a "where like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @param  string  $boolean
@@ -1240,7 +1240,7 @@ class Builder
     /**
      * Add a "where like" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $value
      * @param  bool  $caseSensitive
      * @param  string  $boolean
@@ -1347,7 +1347,7 @@ class Builder
      * Add a "where in raw" clause for integer values to the query.
      *
      * @param  string  $column
-     * @param  \FluentBooking\Framework\Support\ArrayableInterface|array  $values
+     * @param  \Adirectory\Framework\Support\ArrayableInterface|array  $values
      * @param  string  $boolean
      * @param  bool  $not
      * @return $this
@@ -1375,7 +1375,7 @@ class Builder
      * Add an "or where in raw" clause for integer values to the query.
      *
      * @param  string  $column
-     * @param  \FluentBooking\Framework\Support\ArrayableInterface|array  $values
+     * @param  \Adirectory\Framework\Support\ArrayableInterface|array  $values
      * @return $this
      */
     public function orWhereIntegerInRaw($column, $values)
@@ -1387,7 +1387,7 @@ class Builder
      * Add a "where not in raw" clause for integer values to the query.
      *
      * @param  string  $column
-     * @param  \FluentBooking\Framework\Support\ArrayableInterface|array  $values
+     * @param  \Adirectory\Framework\Support\ArrayableInterface|array  $values
      * @param  string  $boolean
      * @return $this
      */
@@ -1400,7 +1400,7 @@ class Builder
      * Add an "or where not in raw" clause for integer values to the query.
      *
      * @param  string  $column
-     * @param  \FluentBooking\Framework\Support\ArrayableInterface|array  $values
+     * @param  \Adirectory\Framework\Support\ArrayableInterface|array  $values
      * @return $this
      */
     public function orWhereIntegerNotInRaw($column, $values)
@@ -1453,7 +1453,7 @@ class Builder
     /**
      * Add a where between statement to the query.
      *
-     * @param  string|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  string|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  array  $values
      * @param  string  $boolean
      * @param  bool  $not
@@ -1590,7 +1590,7 @@ class Builder
     /**
      * Add a "where date" statement to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $operator
      * @param  \DateTimeInterface|string|null  $value
      * @param  string  $boolean
@@ -1838,7 +1838,7 @@ class Builder
     /**
      * Create a new query instance for nested where condition.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function forNestedWhere()
     {
@@ -1848,7 +1848,7 @@ class Builder
     /**
      * Add another query builder as a nested where to the query builder.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $boolean
      * @return $this
      */
@@ -1958,7 +1958,7 @@ class Builder
     /**
      * Add an exists clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $boolean
      * @param  bool  $not
      * @return $this
@@ -2331,7 +2331,7 @@ class Builder
     /**
      * Add a "where" clause to the query for multiple columns with "and" conditions between them.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -2359,7 +2359,7 @@ class Builder
     /**
      * Add an "or where" clause to the query for multiple columns with "and" conditions between them.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -2372,7 +2372,7 @@ class Builder
     /**
      * Add a "where" clause to the query for multiple columns with "or" conditions between them.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -2400,7 +2400,7 @@ class Builder
     /**
      * Add an "or where" clause to the query for multiple columns with "or" conditions between them.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -2413,7 +2413,7 @@ class Builder
     /**
      * Add a "where not" clause to the query for multiple columns where none of the conditions should be true.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -2427,7 +2427,7 @@ class Builder
     /**
      * Add an "or where not" clause to the query for multiple columns where none of the conditions should be true.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Expression[]|string[]  $columns
+     * @param  \Adirectory\Framework\Database\Query\Expression[]|string[]  $columns
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -2557,7 +2557,7 @@ class Builder
     /**
      * Add another query builder as a nested having to the query builder.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $boolean
      * @return $this
      */
@@ -2685,7 +2685,7 @@ class Builder
     /**
      * Add an "order by" clause to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Closure|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Query\Expression|string  $column
      * @param  string  $direction
      * @return $this
      *
@@ -2718,7 +2718,7 @@ class Builder
     /**
      * Add a descending "order by" clause to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Closure|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Query\Expression|string  $column
      * @return $this
      */
     public function orderByDesc($column)
@@ -2729,7 +2729,7 @@ class Builder
     /**
      * Add an "order by" clause for a timestamp to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Closure|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Query\Expression|string  $column
      * @return $this
      */
     public function latest($column = 'created_at')
@@ -2740,7 +2740,7 @@ class Builder
     /**
      * Add an "order by" clause for a timestamp to the query.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Query\Expression|string  $column
+     * @param  \Closure|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Query\Expression|string  $column
      * @return $this
      */
     public function oldest($column = 'created_at')
@@ -2902,7 +2902,7 @@ class Builder
     /**
      * Remove all existing orders and optionally add a new order.
      *
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Query\Expression|string|null  $column
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Query\Expression|string|null  $column
      * @param  string  $direction
      * @return $this
      */
@@ -2938,7 +2938,7 @@ class Builder
     /**
      * Add a union statement to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder|\Closure  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder|\Closure  $query
      * @param  bool  $all
      * @return $this
      */
@@ -2958,7 +2958,7 @@ class Builder
     /**
      * Add a union all statement to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder|\Closure  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder|\Closure  $query
      * @return $this
      */
     public function unionAll($query)
@@ -2986,7 +2986,7 @@ class Builder
     /**
      * Lock the selected rows in the table for updating.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function lockForUpdate()
     {
@@ -2996,7 +2996,7 @@ class Builder
     /**
      * Share lock the selected rows in the table.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function sharedLock()
     {
@@ -3152,8 +3152,8 @@ class Builder
      * @param  string  $column
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Database\RecordsNotFoundException
-     * @throws \FluentBooking\Framework\Database\MultipleRecordsFoundException
+     * @throws \Adirectory\Framework\Database\RecordsNotFoundException
+     * @throws \Adirectory\Framework\Database\MultipleRecordsFoundException
      */
     public function soleValue($column)
     {
@@ -3166,7 +3166,7 @@ class Builder
      * Execute the query as a "select" statement.
      *
      * @param  array|string  $columns
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function get($columns = ['*'])
     {
@@ -3194,8 +3194,8 @@ class Builder
     /**
      * Remove the group limit keys from the results in the collection.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $items
-     * @return \FluentBooking\Framework\Support\Collection
+     * @param  \Adirectory\Framework\Support\Collection  $items
+     * @return \Adirectory\Framework\Support\Collection
      */
     protected function withoutGroupLimitKeys($items)
     {
@@ -3224,7 +3224,7 @@ class Builder
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \FluentBooking\Framework\Pagination\LengthAwarePaginatorInterface
+     * @return \Adirectory\Framework\Pagination\LengthAwarePaginatorInterface
      */
     public function paginate(
         $perPage = 15,
@@ -3256,7 +3256,7 @@ class Builder
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \FluentBooking\Framework\Pagination\PaginatorInterface
+     * @return \Adirectory\Framework\Pagination\PaginatorInterface
      */
     public function simplePaginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
     {
@@ -3278,8 +3278,8 @@ class Builder
      * @param  int|null  $perPage
      * @param  array  $columns
      * @param  string  $cursorName
-     * @param  \FluentBooking\Framework\Pagination\Cursor|string|null  $cursor
-     * @return \FluentBooking\Framework\Pagination\CursorPaginatorInterface
+     * @param  \Adirectory\Framework\Pagination\Cursor|string|null  $cursor
+     * @return \Adirectory\Framework\Pagination\CursorPaginatorInterface
      */
     public function cursorPaginate($perPage = 15, $columns = ['*'], $cursorName = 'cursor', $cursor = null)
     {
@@ -3290,7 +3290,7 @@ class Builder
      * Ensure the proper order by required for cursor pagination.
      *
      * @param  bool  $shouldReverse
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     protected function ensureOrderForCursorPagination($shouldReverse = false)
     {
@@ -3400,7 +3400,7 @@ class Builder
     /**
      * Get a lazy collection for the given query.
      *
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      */
     public function cursor()
     {
@@ -3436,7 +3436,7 @@ class Builder
      *
      * @param  string  $column
      * @param  string|null  $key
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function pluck($column, $key = null)
     {
@@ -3497,7 +3497,7 @@ class Builder
      * @param  array  $queryResult
      * @param  string  $column
      * @param  string  $key
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     protected function pluckFromObjectColumn($queryResult, $column, $key)
     {
@@ -3522,7 +3522,7 @@ class Builder
      * @param  array  $queryResult
      * @param  string  $column
      * @param  string  $key
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     protected function pluckFromArrayColumn($queryResult, $column, $key)
     {
@@ -3863,7 +3863,7 @@ class Builder
      * Insert new records into the table using a subquery.
      *
      * @param  array  $columns
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|string  $query
      * @return int
      */
     public function insertUsing(array $columns, $query)
@@ -3882,7 +3882,7 @@ class Builder
      * Insert new records into the table using a subquery while ignoring errors.
      *
      * @param  array  $columns
-     * @param  \Closure|\FluentBooking\Framework\Database\Query\Builder|\FluentBooking\Framework\Database\Eloquent\Builder<*>|string  $query
+     * @param  \Closure|\Adirectory\Framework\Database\Query\Builder|\Adirectory\Framework\Database\Eloquent\Builder<*>|string  $query
      * @return int
      */
     public function insertOrIgnoreUsing(array $columns, $query)
@@ -4143,7 +4143,7 @@ class Builder
     /**
      * Get a new instance of the query builder.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function newQuery()
     {
@@ -4153,7 +4153,7 @@ class Builder
     /**
      * Create a new query instance for a sub-query.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     protected function forSubQuery()
     {
@@ -4176,7 +4176,7 @@ class Builder
      * Create a raw database expression.
      *
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Query\Expression
+     * @return \Adirectory\Framework\Database\Query\Expression
      */
     public function raw($value)
     {
@@ -4282,7 +4282,7 @@ class Builder
     /**
      * Merge an array of bindings into our bindings.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @return $this
      */
     public function mergeBindings(self $query)
@@ -4333,7 +4333,7 @@ class Builder
     /**
      * Get the database connection instance.
      *
-     * @return \FluentBooking\Framework\Database\ConnectionInterface
+     * @return \Adirectory\Framework\Database\ConnectionInterface
      */
     public function getConnection()
     {
@@ -4343,7 +4343,7 @@ class Builder
     /**
      * Get the database query processor instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Processors\Processor
+     * @return \Adirectory\Framework\Database\Query\Processors\Processor
      */
     public function getProcessor()
     {
@@ -4353,7 +4353,7 @@ class Builder
     /**
      * Get the query grammar instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Grammars\Grammar
+     * @return \Adirectory\Framework\Database\Query\Grammars\Grammar
      */
     public function getGrammar()
     {

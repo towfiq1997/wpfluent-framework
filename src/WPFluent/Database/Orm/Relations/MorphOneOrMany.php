@@ -1,10 +1,10 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
 
 abstract class MorphOneOrMany extends HasOneOrMany
 {
@@ -25,8 +25,8 @@ abstract class MorphOneOrMany extends HasOneOrMany
     /**
      * Create a new morph one or many relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $type
      * @param  string  $id
      * @param  string  $localKey
@@ -85,7 +85,7 @@ abstract class MorphOneOrMany extends HasOneOrMany
     /**
      * Set the foreign ID and type for creating a related model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @return void
      */
     protected function setForeignAttributesForCreate(Model $model)
@@ -119,10 +119,10 @@ abstract class MorphOneOrMany extends HasOneOrMany
     /**
      * Get the relationship query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQuery(Builder $query, Builder $parentQuery, $columns = ['*'])
     {

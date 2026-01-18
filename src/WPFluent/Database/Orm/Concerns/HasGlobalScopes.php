@@ -1,18 +1,18 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
 use Closure;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Database\Orm\Scope;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Database\Orm\Scope;
 
 trait HasGlobalScopes
 {
     /**
      * Register a new global scope on the model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Scope|\Closure|string  $scope
+     * @param  \Adirectory\Framework\Database\Orm\Scope|\Closure|string  $scope
      * @param  \Closure|null  $implementation
      * @return mixed
      *
@@ -53,7 +53,7 @@ trait HasGlobalScopes
     /**
      * Determine if a model has a global scope.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Scope|string  $scope
+     * @param  \Adirectory\Framework\Database\Orm\Scope|string  $scope
      * @return bool
      */
     public static function hasGlobalScope($scope)
@@ -64,8 +64,8 @@ trait HasGlobalScopes
     /**
      * Get a global scope registered with the model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Scope|string  $scope
-     * @return \FluentBooking\Framework\Database\Orm\Scope|\Closure|null
+     * @param  \Adirectory\Framework\Database\Orm\Scope|string  $scope
+     * @return \Adirectory\Framework\Database\Orm\Scope|\Closure|null
      */
     public static function getGlobalScope($scope)
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use Closure;
 use ReflectionMethod;
 use ReflectionFunction;
 use InvalidArgumentException;
-use FluentBooking\Framework\Container\Util;
-use FluentBooking\Framework\Support\Reflector;
-use FluentBooking\Framework\Support\UrlRoutable;
+use Adirectory\Framework\Container\Util;
+use Adirectory\Framework\Support\Reflector;
+use Adirectory\Framework\Support\UrlRoutable;
 
 trait SubstituteRouteParametersTrait
 {

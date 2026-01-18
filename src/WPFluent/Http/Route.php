@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use Closure;
 use Exception;
@@ -9,13 +9,13 @@ use WP_REST_Request;
 use WP_REST_Response;
 use BadMethodCallException;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Pipeline;
-use FluentBooking\Framework\Http\Request\Request;
-use FluentBooking\Framework\Http\Middleware\RateLimiter;
-use FluentBooking\Framework\Validator\ValidationException;
-use FluentBooking\Framework\Database\Orm\ModelNotFoundException;
-use FluentBooking\Framework\Response\Response as WPFluentResponse;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Pipeline;
+use Adirectory\Framework\Http\Request\Request;
+use Adirectory\Framework\Http\Middleware\RateLimiter;
+use Adirectory\Framework\Validator\ValidationException;
+use Adirectory\Framework\Database\Orm\ModelNotFoundException;
+use Adirectory\Framework\Response\Response as WPFluentResponse;
 
 class Route
 {
@@ -23,7 +23,7 @@ class Route
 
     /**
      * Application Instance
-     * @var \FluentBooking\Framework\Foundation\Application
+     * @var \Adirectory\Framework\Foundation\Application
      */
     protected $app = null;
 
@@ -155,7 +155,7 @@ class Route
     /**
      * Construct the route instance
      *
-     * @param \FluentBooking\Framework\Foundation\Application $app
+     * @param \Adirectory\Framework\Foundation\Application $app
      * @param string $restNamespace
      * @param string $uri
      * @param string $handler
@@ -215,7 +215,7 @@ class Route
     /**
      * Alternative constructor
      *
-     * @param \FluentBooking\Framework\Foundation\Application $app
+     * @param \Adirectory\Framework\Foundation\Application $app
      * @param string $restNamespace
      * @param string $uri
      * @param string $handler

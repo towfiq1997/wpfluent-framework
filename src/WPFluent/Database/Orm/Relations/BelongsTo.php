@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
 
 class BelongsTo extends Relation
 {
@@ -18,7 +18,7 @@ class BelongsTo extends Relation
     /**
      * The child model instance of the relation.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Model
+     * @var \Adirectory\Framework\Database\Orm\Model
      */
     protected $child;
 
@@ -46,8 +46,8 @@ class BelongsTo extends Relation
     /**
      * Create a new belongs to relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $child
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $child
      * @param  string  $foreignKey
      * @param  string  $ownerKey
      * @param  string  $relationName

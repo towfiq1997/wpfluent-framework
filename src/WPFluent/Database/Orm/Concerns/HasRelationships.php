@@ -1,28 +1,28 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
 use Closure;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Orm\Relations\Pivot;
-use FluentBooking\Framework\Database\Orm\Relations\HasOne;
-use FluentBooking\Framework\Database\Orm\Relations\HasMany;
-use FluentBooking\Framework\Database\Orm\Relations\MorphTo;
-use FluentBooking\Framework\Database\Orm\Relations\BelongsTo;
-use FluentBooking\Framework\Database\Orm\Relations\MorphMany;
-use FluentBooking\Framework\Database\Orm\Relations\MorphOne;
-use FluentBooking\Framework\Database\Orm\Relations\MorphToMany;
-use FluentBooking\Framework\Database\Orm\Relations\BelongsToMany;
-use FluentBooking\Framework\Database\Orm\Relations\HasManyThrough;
-use FluentBooking\Framework\Database\Orm\Relations\HasOneThrough;
-use FluentBooking\Framework\Database\Orm\Relations\Relation;
-use FluentBooking\Framework\Database\ClassMorphViolationException;
-use FluentBooking\Framework\Database\Orm\PendingHasThroughRelationship;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Relations\Pivot;
+use Adirectory\Framework\Database\Orm\Relations\HasOne;
+use Adirectory\Framework\Database\Orm\Relations\HasMany;
+use Adirectory\Framework\Database\Orm\Relations\MorphTo;
+use Adirectory\Framework\Database\Orm\Relations\BelongsTo;
+use Adirectory\Framework\Database\Orm\Relations\MorphMany;
+use Adirectory\Framework\Database\Orm\Relations\MorphOne;
+use Adirectory\Framework\Database\Orm\Relations\MorphToMany;
+use Adirectory\Framework\Database\Orm\Relations\BelongsToMany;
+use Adirectory\Framework\Database\Orm\Relations\HasManyThrough;
+use Adirectory\Framework\Database\Orm\Relations\HasOneThrough;
+use Adirectory\Framework\Database\Orm\Relations\Relation;
+use Adirectory\Framework\Database\ClassMorphViolationException;
+use Adirectory\Framework\Database\Orm\PendingHasThroughRelationship;
 
 trait HasRelationships
 {
@@ -97,7 +97,7 @@ trait HasRelationships
      * @param  string  $related
      * @param  string|null  $foreignKey
      * @param  string|null  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasOne
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasOne
      */
     public function hasOne($related, $foreignKey = null, $localKey = null)
     {
@@ -113,11 +113,11 @@ trait HasRelationships
     /**
      * Instantiate a new HasOne relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $foreignKey
      * @param  string  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasOne
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasOne
      */
     protected function newHasOne(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -133,7 +133,7 @@ trait HasRelationships
      * @param  string|null  $secondKey
      * @param  string|null  $localKey
      * @param  string|null  $secondLocalKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasOneThrough
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasOneThrough
      */
     public function hasOneThrough($related, $through, $firstKey = null, $secondKey = null, $localKey = null, $secondLocalKey = null)
     {
@@ -153,14 +153,14 @@ trait HasRelationships
     /**
      * Instantiate a new HasOneThrough relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $farParent
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $throughParent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $farParent
+     * @param  \Adirectory\Framework\Database\Orm\Model  $throughParent
      * @param  string  $firstKey
      * @param  string  $secondKey
      * @param  string  $localKey
      * @param  string  $secondLocalKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasOneThrough
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasOneThrough
      */
     protected function newHasOneThrough(Builder $query, Model $farParent, Model $throughParent, $firstKey, $secondKey, $localKey, $secondLocalKey)
     {
@@ -175,7 +175,7 @@ trait HasRelationships
      * @param  string|null  $type
      * @param  string|null  $id
      * @param  string|null  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphOne
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphOne
      */
     public function morphOne($related, $name, $type = null, $id = null, $localKey = null)
     {
@@ -193,12 +193,12 @@ trait HasRelationships
     /**
      * Instantiate a new MorphOne relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $type
      * @param  string  $id
      * @param  string  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphOne
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphOne
      */
     protected function newMorphOne(Builder $query, Model $parent, $type, $id, $localKey)
     {
@@ -212,7 +212,7 @@ trait HasRelationships
      * @param  string|null  $foreignKey
      * @param  string|null  $ownerKey
      * @param  string|null  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Relations\BelongsTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\BelongsTo
      */
     public function belongsTo($related, $foreignKey = null, $ownerKey = null, $relation = null)
     {
@@ -245,12 +245,12 @@ trait HasRelationships
     /**
      * Instantiate a new BelongsTo relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $child
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $child
      * @param  string  $foreignKey
      * @param  string  $ownerKey
      * @param  string  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Relations\BelongsTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\BelongsTo
      */
     protected function newBelongsTo(Builder $query, Model $child, $foreignKey, $ownerKey, $relation)
     {
@@ -264,7 +264,7 @@ trait HasRelationships
      * @param  string|null  $type
      * @param  string|null  $id
      * @param  string|null  $ownerKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphTo
      */
     public function morphTo($name = null, $type = null, $id = null, $ownerKey = null)
     {
@@ -292,7 +292,7 @@ trait HasRelationships
      * @param  string  $type
      * @param  string  $id
      * @param  string  $ownerKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphTo
      */
     protected function morphEagerTo($name, $type, $id, $ownerKey)
     {
@@ -309,7 +309,7 @@ trait HasRelationships
      * @param  string  $type
      * @param  string  $id
      * @param  string  $ownerKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphTo
      */
     protected function morphInstanceTo($target, $name, $type, $id, $ownerKey)
     {
@@ -325,13 +325,13 @@ trait HasRelationships
     /**
      * Instantiate a new MorphTo relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $foreignKey
      * @param  string  $ownerKey
      * @param  string  $type
      * @param  string  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphTo
      */
     protected function newMorphTo(Builder $query, Model $parent, $foreignKey, $ownerKey, $type, $relation)
     {
@@ -364,13 +364,13 @@ trait HasRelationships
     /**
      * Create a pending has-many-through or has-one-through relationship.
      *
-     * @template TIntermediateModel of \FluentBooking\Framework\Database\Orm\Model
+     * @template TIntermediateModel of \Adirectory\Framework\Database\Orm\Model
      *
-     * @param  string|\FluentBooking\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, covariant $this>|\FluentBooking\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, covariant $this>  $relationship
+     * @param  string|\Adirectory\Framework\Database\Orm\Relations\HasMany<TIntermediateModel, covariant $this>|\Adirectory\Framework\Database\Orm\Relations\HasOne<TIntermediateModel, covariant $this>  $relationship
      * @return (
      *     $relationship is string
-     *     ? \FluentBooking\Framework\Database\Orm\PendingHasThroughRelationship<\FluentBooking\Framework\Database\Orm\Model, $this>
-     *     : \FluentBooking\Framework\Database\Orm\PendingHasThroughRelationship<TIntermediateModel, $this>
+     *     ? \Adirectory\Framework\Database\Orm\PendingHasThroughRelationship<\Adirectory\Framework\Database\Orm\Model, $this>
+     *     : \Adirectory\Framework\Database\Orm\PendingHasThroughRelationship<TIntermediateModel, $this>
      * )
      */
     public function through($relationship)
@@ -388,7 +388,7 @@ trait HasRelationships
      * @param  string  $related
      * @param  string|null  $foreignKey
      * @param  string|null  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasMany
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)
     {
@@ -406,11 +406,11 @@ trait HasRelationships
     /**
      * Instantiate a new HasMany relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $foreignKey
      * @param  string  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasMany
      */
     protected function newHasMany(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -426,7 +426,7 @@ trait HasRelationships
      * @param  string|null  $secondKey
      * @param  string|null  $localKey
      * @param  string|null  $secondLocalKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasManyThrough
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasManyThrough
      */
     public function hasManyThrough($related, $through, $firstKey = null, $secondKey = null, $localKey = null, $secondLocalKey = null)
     {
@@ -450,14 +450,14 @@ trait HasRelationships
     /**
      * Instantiate a new HasManyThrough relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $farParent
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $throughParent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $farParent
+     * @param  \Adirectory\Framework\Database\Orm\Model  $throughParent
      * @param  string  $firstKey
      * @param  string  $secondKey
      * @param  string  $localKey
      * @param  string  $secondLocalKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\HasManyThrough
+     * @return \Adirectory\Framework\Database\Orm\Relations\HasManyThrough
      */
     protected function newHasManyThrough(Builder $query, Model $farParent, Model $throughParent, $firstKey, $secondKey, $localKey, $secondLocalKey)
     {
@@ -472,7 +472,7 @@ trait HasRelationships
      * @param  string|null  $type
      * @param  string|null  $id
      * @param  string|null  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphMany
      */
     public function morphMany($related, $name, $type = null, $id = null, $localKey = null)
     {
@@ -493,12 +493,12 @@ trait HasRelationships
     /**
      * Instantiate a new MorphMany relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $type
      * @param  string  $id
      * @param  string  $localKey
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphMany
      */
     protected function newMorphMany(Builder $query, Model $parent, $type, $id, $localKey)
     {
@@ -515,7 +515,7 @@ trait HasRelationships
      * @param  string|null  $parentKey
      * @param  string|null  $relatedKey
      * @param  string|null  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Relations\BelongsToMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\BelongsToMany
      */
     public function belongsToMany($related, $table = null, $foreignPivotKey = null, $relatedPivotKey = null,
                                   $parentKey = null, $relatedKey = null, $relation = null)
@@ -553,15 +553,15 @@ trait HasRelationships
     /**
      * Instantiate a new BelongsToMany relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $table
      * @param  string  $foreignPivotKey
      * @param  string  $relatedPivotKey
      * @param  string  $parentKey
      * @param  string  $relatedKey
      * @param  string|null  $relationName
-     * @return \FluentBooking\Framework\Database\Orm\Relations\BelongsToMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\BelongsToMany
      */
     protected function newBelongsToMany(Builder $query, Model $parent, $table, $foreignPivotKey, $relatedPivotKey,
                                         $parentKey, $relatedKey, $relationName = null)
@@ -621,8 +621,8 @@ trait HasRelationships
     /**
      * Instantiate a new MorphToMany relationship.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $name
      * @param  string  $table
      * @param  string  $foreignPivotKey
@@ -631,7 +631,7 @@ trait HasRelationships
      * @param  string  $relatedKey
      * @param  string|null  $relationName
      * @param  bool  $inverse
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphToMany
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphToMany
      */
     protected function newMorphToMany(Builder $query, Model $parent, $name, $table, $foreignPivotKey,
                                       $relatedPivotKey, $parentKey, $relatedKey,
@@ -693,7 +693,7 @@ trait HasRelationships
      * Get the joining table name for a many-to-many relation.
      *
      * @param  string  $related
-     * @param  \FluentBooking\Framework\Database\Orm\Model|null  $instance
+     * @param  \Adirectory\Framework\Database\Orm\Model|null  $instance
      * @return string
      */
     public function joiningTable($related, $instance = null)

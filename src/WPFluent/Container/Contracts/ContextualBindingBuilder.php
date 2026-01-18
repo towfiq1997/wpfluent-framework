@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Container\Contracts;
+namespace Adirectory\Framework\Container\Contracts;
 
 interface ContextualBindingBuilder
 {

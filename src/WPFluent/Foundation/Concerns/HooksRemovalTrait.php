@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation\Concerns;
+namespace Adirectory\Framework\Foundation\Concerns;
 
 trait HooksRemovalTrait
 {

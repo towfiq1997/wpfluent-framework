@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations\Concerns;
+namespace Adirectory\Framework\Database\Orm\Relations\Concerns;
 
-use FluentBooking\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Model;
 
 trait SupportsDefaultModels
 {
@@ -18,8 +18,8 @@ trait SupportsDefaultModels
     /**
      * Make a new related instance for the given model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     abstract protected function newRelatedInstanceFor(Model $parent);
 
@@ -39,8 +39,8 @@ trait SupportsDefaultModels
     /**
      * Get the default value for this relation.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Model|null
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
+     * @return \Adirectory\Framework\Database\Orm\Model|null
      */
     protected function getDefaultFor(Model $parent)
     {

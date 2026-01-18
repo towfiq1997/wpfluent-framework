@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use stdClass;
 use ArrayAccess;
 use ArrayIterator;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\EnumeratesValues;
-use FluentBooking\Framework\Support\CanBeEscapedWhenCastToString;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\EnumeratesValues;
+use Adirectory\Framework\Support\CanBeEscapedWhenCastToString;
 
 class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerable
 {
@@ -78,7 +78,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Get a lazy collection for the items in this collection.
      *
-     * @return \FluentBooking\Framework\Support\LazyCollection
+     * @return \Adirectory\Framework\Support\LazyCollection
      */
     public function lazy()
     {
@@ -354,7 +354,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Get all items except for those with the specified keys.
      *
-     * @param  \FluentBooking\Framework\Support\Collection|mixed  $keys
+     * @param  \Adirectory\Framework\Support\Collection|mixed  $keys
      * @return static
      */
     public function except($keys)
@@ -1216,8 +1216,8 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      * @param  mixed  $value
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Support\ItemNotFoundException
-     * @throws \FluentBooking\Framework\Support\MultipleItemsFoundException
+     * @throws \Adirectory\Framework\Support\ItemNotFoundException
+     * @throws \Adirectory\Framework\Support\MultipleItemsFoundException
      */
     public function sole($key = null, $operator = null, $value = null)
     {
@@ -1246,7 +1246,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      * @param  mixed  $value
      * @return mixed
      *
-     * @throws \FluentBooking\Framework\Support\ItemNotFoundException
+     * @throws \Adirectory\Framework\Support\ItemNotFoundException
      */
     public function firstOrFail($key = null, $operator = null, $value = null)
     {
@@ -1663,7 +1663,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Get a base Support collection instance from this collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function toBase()
     {

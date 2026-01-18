@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations\Concerns;
+namespace Adirectory\Framework\Database\Orm\Relations\Concerns;
 
-use FluentBooking\Framework\Database\Orm\RelationNotFoundException;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Database\Orm\RelationNotFoundException;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
 
 trait SupportsInverseRelations
 {
@@ -88,9 +88,9 @@ trait SupportsInverseRelations
     /**
      * Set the inverse relation on all models in a collection.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Model|null  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $models
+     * @param  \Adirectory\Framework\Database\Orm\Model|null  $parent
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     protected function applyInverseRelationToCollection($models, ?Model $parent = null)
     {
@@ -106,9 +106,9 @@ trait SupportsInverseRelations
     /**
      * Set the inverse relation on a model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
-     * @param  \FluentBooking\Framework\Database\Orm\Model|null  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model|null  $parent
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     protected function applyInverseRelationToModel(Model $model, ?Model $parent = null)
     {

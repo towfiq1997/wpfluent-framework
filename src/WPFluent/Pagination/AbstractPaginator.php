@@ -1,18 +1,18 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 use Closure;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Tappable;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\ForwardsCalls;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Tappable;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\ForwardsCalls;
 
 /**
- * @mixin \FluentBooking\Framework\Support\Collection
+ * @mixin \Adirectory\Framework\Support\Collection
  */
 abstract class AbstractPaginator
 {
@@ -21,7 +21,7 @@ abstract class AbstractPaginator
     /**
      * All of the items being paginated.
      *
-     * @var \FluentBooking\Framework\Support\Collection
+     * @var \Adirectory\Framework\Support\Collection
      */
     protected $items;
 
@@ -547,7 +547,7 @@ abstract class AbstractPaginator
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \FluentBooking\Framework\View\View
+     * @return \Adirectory\Framework\View\View
      */
     public function links($view = 'web.pagination.default', $data = [])
     {
@@ -626,7 +626,7 @@ abstract class AbstractPaginator
     /**
      * Get the paginator's underlying collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function getCollection()
     {
@@ -636,7 +636,7 @@ abstract class AbstractPaginator
     /**
      * Set the paginator's underlying collection.
      *
-     * @param  \FluentBooking\Framework\Support\Collection  $collection
+     * @param  \Adirectory\Framework\Support\Collection  $collection
      * @return $this
      */
     public function setCollection(Collection $collection)

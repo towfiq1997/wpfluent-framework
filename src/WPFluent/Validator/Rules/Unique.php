@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Validator\Rules;
+namespace Adirectory\Framework\Validator\Rules;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Support\Conditionable;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Support\Conditionable;
 
 class Unique
 {
@@ -45,7 +45,7 @@ class Unique
     /**
      * Ignore the given model during the unique check.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @param  string|null  $idColumn
      * @return $this
      */

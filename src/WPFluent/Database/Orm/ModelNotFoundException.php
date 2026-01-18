@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Database\RecordsNotFoundException;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Database\RecordsNotFoundException;
 
 class ModelNotFoundException extends RecordsNotFoundException
 {

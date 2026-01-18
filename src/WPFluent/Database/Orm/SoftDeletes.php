@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Collection as BaseCollection;
-use FluentBooking\Framework\Database\Orm\Collection as OrmCollection;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Collection as BaseCollection;
+use Adirectory\Framework\Database\Orm\Collection as OrmCollection;
 
 /**
- * @method static static|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder withTrashed(bool $withTrashed = true)
- * @method static static|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder onlyTrashed()
- * @method static static|\FluentBooking\Framework\Database\Orm\Builder|\FluentBooking\Framework\Database\Query\Builder withoutTrashed()
+ * @method static static|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder withTrashed(bool $withTrashed = true)
+ * @method static static|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder onlyTrashed()
+ * @method static static|\Adirectory\Framework\Database\Orm\Builder|\Adirectory\Framework\Database\Query\Builder withoutTrashed()
  */
 trait SoftDeletes
 {
@@ -75,7 +75,7 @@ trait SoftDeletes
     /**
      * Destroy the models for the given IDs.
      *
-     * @param  \FluentBooking\Framework\Support\Collection|array|int|string  $ids
+     * @param  \Adirectory\Framework\Support\Collection|array|int|string  $ids
      * @return int
      */
     public static function forceDestroy($ids)

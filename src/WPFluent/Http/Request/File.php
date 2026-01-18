@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
 use ArrayAccess;
 use SplFileInfo;
 use JsonSerializable;
 use RuntimeException;
-use FluentBooking\Framework\Support\Util;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Validator\Contracts\File as Contract;
+use Adirectory\Framework\Support\Util;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Validator\Contracts\File as Contract;
 
 class File extends SplFileInfo implements Contract, JsonSerializable, ArrayAccess
 {

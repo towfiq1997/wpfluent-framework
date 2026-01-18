@@ -1,10 +1,10 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
 use Exception;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
 use InvalidArgumentException;
 
 class Async
@@ -19,7 +19,7 @@ class Async
 	/**
 	 * The application instance
 	 * 
-	 * @var \FluentBooking\Framework\Foundation\Application
+	 * @var \Adirectory\Framework\Foundation\Application
 	 */
 	private static $app = null;
 
@@ -113,7 +113,7 @@ class Async
 	/**
 	 * Verify the request by checking the nonce.
 	 * 
-	 * @param  FluentBooking\Framework\Foundation\Application $app
+	 * @param  Adirectory\Framework\Foundation\Application $app
 	 * @param  array $data
 	 * @return void
 	 */
@@ -157,7 +157,7 @@ class Async
 	/**
 	 * Execute the action handler.
 	 * 
-	 * @param  \FluentBooking\Framework\Foundation\Application $app
+	 * @param  \Adirectory\Framework\Foundation\Application $app
 	 * @param  string $class
 	 * @param  array  $params
 	 * @return void

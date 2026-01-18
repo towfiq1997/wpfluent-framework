@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Http;
+namespace Adirectory\Framework\Http;
 
 use Exception;
 use BadMethodCallException;
 use InvalidArgumentException;
-use FluentBooking\Framework\Foundation\App;
+use Adirectory\Framework\Foundation\App;
 
 /**
  * Register AJAX handlers using HTTP-like method names.
@@ -102,7 +102,7 @@ use FluentBooking\Framework\Foundation\App;
 class Ajax
 {
 	/**
-	 * $app FluentBooking\Framework\Foundation\Application
+	 * $app Adirectory\Framework\Foundation\Application
 	 * @var null
 	 */
 	protected $app = null;
@@ -122,7 +122,7 @@ class Ajax
 	/**
 	 * Consruct the Instance.
 	 * 
-	 * @param FluentBooking\Framework\Foundation\Application $app
+	 * @param Adirectory\Framework\Foundation\Application $app
 	 */
 	public function __construct($app = null)
 	{

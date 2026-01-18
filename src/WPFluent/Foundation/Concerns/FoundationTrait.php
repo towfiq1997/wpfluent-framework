@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation\Concerns;
+namespace Adirectory\Framework\Foundation\Concerns;
 
-use FluentBooking\Framework\Http\Request\WPUserProxy;
+use Adirectory\Framework\Http\Request\WPUserProxy;
 
 trait FoundationTrait
 {
@@ -481,7 +481,7 @@ trait FoundationTrait
      * Returns a WPUserProxy instance if the 'init' action has fired,
      * otherwise logs a warning in debug mode and returns null.
      * 
-     * @return \FluentBooking\Framework\Http\Request\WPUserProxy|null
+     * @return \Adirectory\Framework\Http\Request\WPUserProxy|null
      */
     public function user()
     {

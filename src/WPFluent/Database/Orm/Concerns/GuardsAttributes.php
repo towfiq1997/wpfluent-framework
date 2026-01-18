@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Support\Str;
 
 trait GuardsAttributes
 {

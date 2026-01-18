@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 class Util
 {
@@ -59,7 +59,7 @@ class Util
 	 * Get the user locale.
 	 * 
 	 * @param  int|null $userId
-	 * @return \FluentBooking\Framework\Support\UserLocale
+	 * @return \Adirectory\Framework\Support\UserLocale
 	 */
 	public static function getLocale($userId = null)
 	{

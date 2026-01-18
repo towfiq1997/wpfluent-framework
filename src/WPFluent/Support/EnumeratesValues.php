@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use Exception;
@@ -9,14 +9,14 @@ use CachingIterator;
 use JsonSerializable;
 use UnexpectedValueException;
 
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Collection;
-use FluentBooking\Framework\Support\Enumerable;
-use FluentBooking\Framework\Support\JsonableInterface;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Support\HigherOrderWhenProxy;
-use FluentBooking\Framework\Support\HigherOrderCollectionProxy;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Collection;
+use Adirectory\Framework\Support\Enumerable;
+use Adirectory\Framework\Support\JsonableInterface;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Support\HigherOrderWhenProxy;
+use Adirectory\Framework\Support\HigherOrderCollectionProxy;
 
 /**
  * @property-read HigherOrderCollectionProxy $average
@@ -829,7 +829,7 @@ trait EnumeratesValues
     /**
      * Collect the values into a collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function collect()
     {

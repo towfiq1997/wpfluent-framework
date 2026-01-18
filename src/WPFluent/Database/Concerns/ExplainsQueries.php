@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Concerns;
+namespace Adirectory\Framework\Database\Concerns;
 
-use FluentBooking\Framework\Support\Collection;
+use Adirectory\Framework\Support\Collection;
 
 trait ExplainsQueries
 {
     /**
      * Explains the query.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function explain()
     {

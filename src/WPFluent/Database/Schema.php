@@ -1,8 +1,8 @@
 <?php
 
-namespace FluentBooking\Framework\Database;
+namespace Adirectory\Framework\Database;
 
-use FluentBooking\Framework\Database\Concerns\MaintainsDatabase;
+use Adirectory\Framework\Database\Concerns\MaintainsDatabase;
 
 class Schema
 {

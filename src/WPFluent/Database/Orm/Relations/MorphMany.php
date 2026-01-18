@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Collection;
 
 class MorphMany extends MorphOneOrMany
 {
     /**
      * Convert the relationship to a "morph one" relationship.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Relations\MorphOne<TRelatedModel, TDeclaringModel>
+     * @return \Adirectory\Framework\Database\Orm\Relations\MorphOne<TRelatedModel, TDeclaringModel>
      */
     public function one()
     {
@@ -54,7 +54,7 @@ class MorphMany extends MorphOneOrMany
      * Match the eagerly loaded results to their parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -67,7 +67,7 @@ class MorphMany extends MorphOneOrMany
      * Create a new instance of the related model. Allow mass-assignment.
      *
      * @param  array  $attributes
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function forceCreate(array $attributes = [])
     {

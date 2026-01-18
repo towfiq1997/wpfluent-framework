@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
 trait HasUniqueIds
 {

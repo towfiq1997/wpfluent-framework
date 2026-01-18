@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Query\JoinClause;
-use FluentBooking\Framework\Database\Orm\SupportsPartialRelations;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\CanBeOneOfMany;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Query\JoinClause;
+use Adirectory\Framework\Database\Orm\SupportsPartialRelations;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\CanBeOneOfMany;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
 
 class MorphOne extends MorphOneOrMany implements SupportsPartialRelations
 {

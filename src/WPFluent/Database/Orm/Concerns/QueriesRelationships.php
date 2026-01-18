@@ -1,32 +1,32 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
 use Closure;
 use BadMethodCallException;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\Orm\Relations\MorphTo;
-use FluentBooking\Framework\Database\Orm\Relations\Relation;
-use FluentBooking\Framework\Database\Orm\Relations\BelongsTo;
-use FluentBooking\Framework\Database\Orm\RelationNotFoundException;
-use FluentBooking\Framework\Database\Query\Builder as QueryBuilder;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\Orm\Relations\MorphTo;
+use Adirectory\Framework\Database\Orm\Relations\Relation;
+use Adirectory\Framework\Database\Orm\Relations\BelongsTo;
+use Adirectory\Framework\Database\Orm\RelationNotFoundException;
+use Adirectory\Framework\Database\Query\Builder as QueryBuilder;
 
 trait QueriesRelationships
 {
     /**
      * Add a relationship count / exists condition to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\Relation|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\Relation|string  $relation
      * @param  string  $operator
      * @param  int  $count
      * @param  string  $boolean
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      *
      * @throws \RuntimeException
      */
@@ -77,7 +77,7 @@ trait QueriesRelationships
      * @param  int  $count
      * @param  string  $boolean
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     protected function hasNested($relations, $operator = '>=', $count = 1, $boolean = 'and', $callback = null)
     {
@@ -108,7 +108,7 @@ trait QueriesRelationships
      * @param  string  $relation
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orHas($relation, $operator = '>=', $count = 1)
     {
@@ -121,7 +121,7 @@ trait QueriesRelationships
      * @param  string  $relation
      * @param  string  $boolean
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function doesntHave($relation, $boolean = 'and', Closure $callback = null)
     {
@@ -132,7 +132,7 @@ trait QueriesRelationships
      * Add a relationship count / exists condition to the query with an "or".
      *
      * @param  string  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orDoesntHave($relation)
     {
@@ -146,7 +146,7 @@ trait QueriesRelationships
      * @param  \Closure|null  $callback
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereHas($relation, Closure $callback = null, $operator = '>=', $count = 1)
     {
@@ -162,7 +162,7 @@ trait QueriesRelationships
      * @param  \Closure|null  $cb (callback)
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function withWhereHas($relation, Closure $cb = null, $operator = '>=', $count = 1)
     {
@@ -177,7 +177,7 @@ trait QueriesRelationships
      * @param  \Closure|null  $callback
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereHas($relation, Closure $callback = null, $operator = '>=', $count = 1)
     {
@@ -189,7 +189,7 @@ trait QueriesRelationships
      *
      * @param  string  $relation
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereDoesntHave($relation, Closure $callback = null)
     {
@@ -201,7 +201,7 @@ trait QueriesRelationships
      *
      * @param  string  $relation
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereDoesntHave($relation, Closure $callback = null)
     {
@@ -211,13 +211,13 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  string  $operator
      * @param  int  $count
      * @param  string  $boolean
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function hasMorph($relation, $types, $operator = '>=', $count = 1, $boolean = 'and', Closure $callback = null)
     {
@@ -260,9 +260,9 @@ trait QueriesRelationships
     /**
      * Get the BelongsTo relationship for a single polymorphic type.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo  $relation
      * @param  string  $type
-     * @return \FluentBooking\Framework\Database\Orm\Relations\BelongsTo
+     * @return \Adirectory\Framework\Database\Orm\Relations\BelongsTo
      */
     protected function getBelongsToRelation(MorphTo $relation, $type)
     {
@@ -282,11 +282,11 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with an "or".
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orHasMorph($relation, $types, $operator = '>=', $count = 1)
     {
@@ -296,11 +296,11 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  string  $boolean
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function doesntHaveMorph($relation, $types, $boolean = 'and', Closure $callback = null)
     {
@@ -310,9 +310,9 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with an "or".
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orDoesntHaveMorph($relation, $types)
     {
@@ -322,12 +322,12 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with where clauses.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  \Closure|null  $callback
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereHasMorph($relation, $types, Closure $callback = null, $operator = '>=', $count = 1)
     {
@@ -337,12 +337,12 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with where clauses and an "or".
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  \Closure|null  $callback
      * @param  string  $operator
      * @param  int  $count
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereHasMorph($relation, $types, Closure $callback = null, $operator = '>=', $count = 1)
     {
@@ -352,10 +352,10 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with where clauses.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereDoesntHaveMorph($relation, $types, Closure $callback = null)
     {
@@ -365,10 +365,10 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship count / exists condition to the query with where clauses and an "or".
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
      * @param  \Closure|null  $callback
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereDoesntHaveMorph($relation, $types, Closure $callback = null)
     {
@@ -379,10 +379,10 @@ trait QueriesRelationships
      * Add a basic where clause to a relationship query.
      *
      * @param  string  $relation
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereRelation($relation, $column, $operator = null, $value = null)
     {
@@ -399,10 +399,10 @@ trait QueriesRelationships
      * Add an "or where" clause to a relationship query.
      *
      * @param  string  $relation
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereRelation($relation, $column, $operator = null, $value = null)
     {
@@ -418,12 +418,12 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship condition to the query with a where clause.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereMorphRelation($relation, $types, $column, $operator = null, $value = null)
     {
@@ -435,12 +435,12 @@ trait QueriesRelationships
     /**
      * Add a polymorphic relationship condition to the query with an "or where" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
      * @param  string|array  $types
-     * @param  \Closure|string|array|\FluentBooking\Framework\Database\Query\Expression  $column
+     * @param  \Closure|string|array|\Adirectory\Framework\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereMorphRelation($relation, $types, $column, $operator = null, $value = null)
     {
@@ -452,9 +452,9 @@ trait QueriesRelationships
     /**
      * Add a morph-to relationship condition to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
-     * @param  \FluentBooking\Framework\Database\Orm\Model|string  $model
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Model|string  $model
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function whereMorphedTo($relation, $model, $boolean = 'and')
     {
@@ -485,8 +485,8 @@ trait QueriesRelationships
     /**
      * Add a not morph-to relationship condition to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo<*, *>|string  $relation
-     * @param  \FluentBooking\Framework\Database\Orm\Model|string  $model
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo<*, *>|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Model|string  $model
      * @return $this
      */
     public function whereNotMorphedTo($relation, $model, $boolean = 'and')
@@ -514,9 +514,9 @@ trait QueriesRelationships
     /**
      * Add a morph-to relationship condition to the query with an "or where" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo|string  $relation
-     * @param  \FluentBooking\Framework\Database\Orm\Model|string  $model
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Model|string  $model
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function orWhereMorphedTo($relation, $model)
     {
@@ -526,8 +526,8 @@ trait QueriesRelationships
     /**
      * Add a not morph-to relationship condition to the query with an "or where" clause.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\MorphTo<*, *>|string  $relation
-     * @param  \FluentBooking\Framework\Database\Orm\Model|string  $model
+     * @param  \Adirectory\Framework\Database\Orm\Relations\MorphTo<*, *>|string  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Model|string  $model
      * @return $this
      */
     public function orWhereNotMorphedTo($relation, $model)
@@ -538,7 +538,7 @@ trait QueriesRelationships
     /**
      * Add a "belongs to" relationship where clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $related
+     * @param  \Adirectory\Framework\Database\Orm\Model  $related
      * @param  string  $relationship
      * @param  string  $boolean
      * @return $this
@@ -585,7 +585,7 @@ trait QueriesRelationships
     /**
      * Add an "BelongsTo" relationship with an "or where" clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $related
+     * @param  \Adirectory\Framework\Database\Orm\Model  $related
      * @param  string  $relationship
      * @return $this
      *
@@ -782,12 +782,12 @@ trait QueriesRelationships
     /**
      * Add the "has" condition where clause to the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $hasQuery
-     * @param  \FluentBooking\Framework\Database\Orm\Relations\Relation  $relation
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $hasQuery
+     * @param  \Adirectory\Framework\Database\Orm\Relations\Relation  $relation
      * @param  string  $operator
      * @param  int  $count
      * @param  string  $boolean
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     protected function addHasWhere(Builder $hasQuery, Relation $relation, $operator, $count, $boolean)
     {
@@ -801,8 +801,8 @@ trait QueriesRelationships
     /**
      * Merge the where constraints from another query to the current query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $from
-     * @return \FluentBooking\Framework\Database\Orm\Builder|static
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $from
+     * @return \Adirectory\Framework\Database\Orm\Builder|static
      */
     public function mergeConstraintsFrom(Builder $from)
     {
@@ -847,7 +847,7 @@ trait QueriesRelationships
     /**
      * Add a sub-query count clause to this query.
      *
-     * @param  \FluentBooking\Framework\Database\Query\Builder  $query
+     * @param  \Adirectory\Framework\Database\Query\Builder  $query
      * @param  string  $operator
      * @param  int  $count
      * @param  string  $boolean
@@ -869,7 +869,7 @@ trait QueriesRelationships
      * Get the "has relation" base query instance.
      *
      * @param  string  $relation
-     * @return \FluentBooking\Framework\Database\Orm\Relations\Relation
+     * @return \Adirectory\Framework\Database\Orm\Relations\Relation
      */
     protected function getRelationWithoutConstraints($relation)
     {

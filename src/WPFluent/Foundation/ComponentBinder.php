@@ -1,34 +1,34 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\View\View;
-use FluentBooking\Framework\Cache\Cache;
-use FluentBooking\Framework\Http\URL;
-use FluentBooking\Framework\Http\Router;
-use FluentBooking\Framework\Support\Facade;
-use FluentBooking\Framework\Support\Pipeline;
-use FluentBooking\Framework\Http\Request\Request;
-use FluentBooking\Framework\Http\Response\Response;
-use FluentBooking\Framework\Events\Dispatcher;
-use FluentBooking\Framework\Encryption\Encrypter;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Validator\Validator;
-use FluentBooking\Framework\Foundation\RequestGuard;
-use FluentBooking\Framework\Database\ConnectionResolver;
-use FluentBooking\Framework\Database\Query\WPDBConnection;
-use FluentBooking\Framework\Pagination\AbstractCursorPaginator;
-use FluentBooking\Framework\Pagination\AbstractPaginator;
-use FluentBooking\Framework\Pagination\CursorPaginator;
-use FluentBooking\Framework\Pagination\Cursor;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\View\View;
+use Adirectory\Framework\Cache\Cache;
+use Adirectory\Framework\Http\URL;
+use Adirectory\Framework\Http\Router;
+use Adirectory\Framework\Support\Facade;
+use Adirectory\Framework\Support\Pipeline;
+use Adirectory\Framework\Http\Request\Request;
+use Adirectory\Framework\Http\Response\Response;
+use Adirectory\Framework\Events\Dispatcher;
+use Adirectory\Framework\Encryption\Encrypter;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Validator\Validator;
+use Adirectory\Framework\Foundation\RequestGuard;
+use Adirectory\Framework\Database\ConnectionResolver;
+use Adirectory\Framework\Database\Query\WPDBConnection;
+use Adirectory\Framework\Pagination\AbstractCursorPaginator;
+use Adirectory\Framework\Pagination\AbstractPaginator;
+use Adirectory\Framework\Pagination\CursorPaginator;
+use Adirectory\Framework\Pagination\Cursor;
 use WpOrg\Requests\Exception\Http\Status401;
 
 class ComponentBinder
 {
     /**
      * The application instance
-     * @var \FluentBooking\Framework\Foundation\Application
+     * @var \Adirectory\Framework\Foundation\Application
      */
     protected $app = null;
 
@@ -53,7 +53,7 @@ class ComponentBinder
 
     /**
      * Construct the binder
-     * @param \FluentBooking\Framework\Foundation\Application $app
+     * @param \Adirectory\Framework\Foundation\Application $app
      */
     public function __construct($app)
     {
@@ -82,7 +82,7 @@ class ComponentBinder
 
     /**
      * Register resolving event into the container.
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return null
      */
     protected function registerResolvingEvent($app)
@@ -103,7 +103,7 @@ class ComponentBinder
 
     /**
      * Register the dynamic facade resolver.
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return null
      */
     protected function registerFacadeResolver($app)
@@ -124,7 +124,7 @@ class ComponentBinder
      * Create a facade resolver class dynamically
      * @param  string $facade
      * @param  string $class
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return null
      */
     protected function createFacadeFor($facade, $class, $app)
@@ -151,7 +151,7 @@ class ComponentBinder
      * Resolve the binding name.
      * @param  string $facade
      * @param  string $class
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return string
      */
     protected function resolveFacadeAccessor($facade, $class,$app)
@@ -369,7 +369,7 @@ class ComponentBinder
      * Load other bindings the developers might
      * have added in the application level.
      * 
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return null
      */
     protected function extendBindings($app)
@@ -383,7 +383,7 @@ class ComponentBinder
 
     /**
      * Load the plugin's global functions
-     * @param  \FluentBooking\Framework\Foundation\Application $app
+     * @param  \Adirectory\Framework\Foundation\Application $app
      * @return null
      */
     protected function loadGlobalFunctions($app)

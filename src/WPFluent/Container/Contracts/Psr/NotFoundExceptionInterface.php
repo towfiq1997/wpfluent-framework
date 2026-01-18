@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Container\Contracts\Psr;
+namespace Adirectory\Framework\Container\Contracts\Psr;
 
 /**
  * No entry was found in the container.

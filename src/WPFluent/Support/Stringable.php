@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use ArrayAccess;
 use JsonSerializable;
-use FluentBooking\Framework\Support\DateTime;
-use FluentBooking\Framework\Support\Tappable;
-use FluentBooking\Framework\Support\Conditionable;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\HelperFunctionsTrait;
+use Adirectory\Framework\Support\DateTime;
+use Adirectory\Framework\Support\Tappable;
+use Adirectory\Framework\Support\Conditionable;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\HelperFunctionsTrait;
 
 class Stringable implements JsonSerializable
 {
@@ -325,7 +325,7 @@ class Stringable implements JsonSerializable
     /**
      * Determine if the string is an exact match with the given value.
      *
-     * @param  \FluentBooking\Framework\Support\Stringable|string  $value
+     * @param  \Adirectory\Framework\Support\Stringable|string  $value
      * @return bool
      */
     public function exactly($value)
@@ -342,7 +342,7 @@ class Stringable implements JsonSerializable
      *
      * @param  string  $delimiter
      * @param  int  $limit
-     * @return \FluentBooking\Framework\Support\Collection<int, string>
+     * @return \Adirectory\Framework\Support\Collection<int, string>
      */
     public function explode($delimiter, $limit = PHP_INT_MAX)
     {
@@ -355,7 +355,7 @@ class Stringable implements JsonSerializable
      * @param  string|int  $pattern
      * @param  int  $limit
      * @param  int  $flags
-     * @return \FluentBooking\Framework\Support\Collection<int, string>
+     * @return \Adirectory\Framework\Support\Collection<int, string>
      */
     public function split($pattern, $limit = -1, $flags = 0)
     {
@@ -533,7 +533,7 @@ class Stringable implements JsonSerializable
      * Get the string matching the given pattern.
      *
      * @param  string  $pattern
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function matchAll($pattern)
     {
@@ -778,7 +778,7 @@ class Stringable implements JsonSerializable
      * Parse input from a string to a collection, according to a format.
      *
      * @param  string  $format
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function scan($format)
     {
@@ -1008,7 +1008,7 @@ class Stringable implements JsonSerializable
     /**
      * Split a string by uppercase characters.
      *
-     * @return \FluentBooking\Framework\Support\Collection<int, string>
+     * @return \Adirectory\Framework\Support\Collection<int, string>
      */
     public function ucsplit()
     {
@@ -1298,7 +1298,7 @@ class Stringable implements JsonSerializable
      *
      * @param  string|null  $format
      * @param  string|null  $tz
-     * @return \FluentBooking\Framework\Support\DateTime
+     * @return \Adirectory\Framework\Support\DateTime
      *
      * @throws \InvalidArgumentException
      */

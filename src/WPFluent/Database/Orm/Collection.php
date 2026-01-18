@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use LogicException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Support\Collection as BaseCollection;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Support\Collection as BaseCollection;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
 
 class Collection extends BaseCollection
 {
@@ -18,7 +18,7 @@ class Collection extends BaseCollection
      *
      * @param  mixed  $key
      * @param  mixed  $default
-     * @return \FluentBooking\Framework\Database\Orm\Model|static|null
+     * @return \Adirectory\Framework\Database\Orm\Model|static|null
      */
     public function find($key, $default = null)
     {
@@ -211,7 +211,7 @@ class Collection extends BaseCollection
     /**
      * Load a relationship path if it is not already eager loaded.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $models
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $models
      * @param  array  $path
      * @return void
      */
@@ -342,7 +342,7 @@ class Collection extends BaseCollection
      * Run a map over each of the items.
      *
      * @param  callable  $callback
-     * @return \FluentBooking\Framework\Support\Collection|static
+     * @return \Adirectory\Framework\Support\Collection|static
      */
     public function map(callable $callback)
     {
@@ -359,7 +359,7 @@ class Collection extends BaseCollection
      * The callback should return an associative array with a single key / value pair.
      *
      * @param  callable  $callback
-     * @return \FluentBooking\Framework\Support\Collection|static
+     * @return \Adirectory\Framework\Support\Collection|static
      */
     public function mapWithKeys(callable $callback)
     {
@@ -578,7 +578,7 @@ class Collection extends BaseCollection
      * Count the number of items in the collection by a field or using a callback.
      *
      * @param  (callable(TModel, TKey): array-key)|string|null  $countBy
-     * @return \FluentBooking\Framework\Support\Collection<array-key, int>
+     * @return \Adirectory\Framework\Support\Collection<array-key, int>
      */
     public function countBy($countBy = null)
     {
@@ -594,7 +594,7 @@ class Collection extends BaseCollection
      *
      * @param  string|array  $value
      * @param  string|null  $key
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function pluck($value, $key = null)
     {
@@ -615,7 +615,7 @@ class Collection extends BaseCollection
     /**
      * Get the keys of the collection items.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function keys()
     {
@@ -626,7 +626,7 @@ class Collection extends BaseCollection
      * Zip the collection together with one or more arrays.
      *
      * @param  mixed  ...$items
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function zip($items)
     {
@@ -636,7 +636,7 @@ class Collection extends BaseCollection
     /**
      * Collapse the collection of items into a single array.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function collapse()
     {
@@ -647,7 +647,7 @@ class Collection extends BaseCollection
      * Get a flattened array of the items in the collection.
      *
      * @param  int  $depth
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function flatten($depth = INF)
     {
@@ -657,7 +657,7 @@ class Collection extends BaseCollection
     /**
      * Flip the items in the collection.
      *
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function flip()
     {
@@ -669,7 +669,7 @@ class Collection extends BaseCollection
      *
      * @param  int  $size
      * @param  mixed  $value
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public function pad($size, $value)
     {
@@ -679,7 +679,7 @@ class Collection extends BaseCollection
     /**
      * Get the Orm query builder from the collection.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      *
      * @throws \LogicException
      */

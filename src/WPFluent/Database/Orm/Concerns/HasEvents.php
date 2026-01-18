@@ -1,10 +1,10 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Concerns;
+namespace Adirectory\Framework\Database\Orm\Concerns;
 
-use FluentBooking\Framework\Events\DispatcherInterface;
-use FluentBooking\Framework\Events\NullDispatcher;
-use FluentBooking\Framework\Support\Arr;
+use Adirectory\Framework\Events\DispatcherInterface;
+use Adirectory\Framework\Events\NullDispatcher;
+use Adirectory\Framework\Support\Arr;
 use InvalidArgumentException;
 use ReflectionClass;
 
@@ -373,7 +373,7 @@ trait HasEvents
     /**
      * Get the event dispatcher instance.
      *
-     * @return \FluentBooking\Framework\Events\Dispatcher
+     * @return \Adirectory\Framework\Events\Dispatcher
      */
     public static function getEventDispatcher()
     {
@@ -383,7 +383,7 @@ trait HasEvents
     /**
      * Set the event dispatcher instance.
      *
-     * @param  \FluentBooking\Framework\Events\Dispatcher  $dispatcher
+     * @param  \Adirectory\Framework\Events\Dispatcher  $dispatcher
      * @return void
      */
     public static function setEventDispatcher(DispatcherInterface $dispatcher)

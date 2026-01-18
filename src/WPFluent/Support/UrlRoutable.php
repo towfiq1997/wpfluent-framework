@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 interface UrlRoutable
 {
@@ -23,7 +23,7 @@ interface UrlRoutable
      *
      * @param  mixed  $value
      * @param  string|null  $field
-     * @return \FluentBooking\Framework\Database\Orm\Model|null
+     * @return \Adirectory\Framework\Database\Orm\Model|null
      */
     public function resolveRouteBinding($value, $field = null);
 }

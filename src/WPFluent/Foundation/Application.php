@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Foundation;
+namespace Adirectory\Framework\Foundation;
 
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Env;
-use FluentBooking\Framework\Http\Client;
-use FluentBooking\Framework\Foundation\Config;
-use FluentBooking\Framework\Container\Container;
-use FluentBooking\Framework\Foundation\ComponentBinder;
-use FluentBooking\Framework\Foundation\Concerns\FoundationTrait;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Env;
+use Adirectory\Framework\Http\Client;
+use Adirectory\Framework\Foundation\Config;
+use Adirectory\Framework\Container\Container;
+use Adirectory\Framework\Foundation\ComponentBinder;
+use Adirectory\Framework\Foundation\Concerns\FoundationTrait;
 
 class Application extends Container
 {
@@ -465,7 +465,7 @@ class Application extends Container
     /**
      * Register rest routes.
      * 
-     * @param \FluentBooking\Framework\Http\Router $router
+     * @param \Adirectory\Framework\Http\Router $router
      * 
      * @return null
      */
@@ -479,7 +479,7 @@ class Application extends Container
     /**
      * Load (include) routes
      * 
-     * @param \FluentBooking\Framework\Http\Router $router
+     * @param \Adirectory\Framework\Http\Router $router
      * @return null
      */
     protected function requireRouteFile($router)

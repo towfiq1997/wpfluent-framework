@@ -1,26 +1,26 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
 use Closure;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\ArrayableInterface;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\ModelNotFoundException;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
-use FluentBooking\Framework\Database\Orm\SoftDeletes;
-use FluentBooking\Framework\Database\Query\Grammars\MySqlGrammar;
-use FluentBooking\Framework\Database\UniqueConstraintViolationException;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\ArrayableInterface;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\ModelNotFoundException;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\SoftDeletes;
+use Adirectory\Framework\Database\Query\Grammars\MySqlGrammar;
+use Adirectory\Framework\Database\UniqueConstraintViolationException;
 
 /**
- * @template TRelatedModel of \FluentBooking\Framework\Database\Orm\Model
- * @template TIntermediateModel of \FluentBooking\Framework\Database\Orm\Model
- * @template TDeclaringModel of \FluentBooking\Framework\Database\Orm\Model
+ * @template TRelatedModel of \Adirectory\Framework\Database\Orm\Model
+ * @template TIntermediateModel of \Adirectory\Framework\Database\Orm\Model
+ * @template TDeclaringModel of \Adirectory\Framework\Database\Orm\Model
  * @template TResult
  *
- * @extends \FluentBooking\Framework\Database\Orm\Relations\Relation<TRelatedModel, TIntermediateModel, TResult>
+ * @extends \Adirectory\Framework\Database\Orm\Relations\Relation<TRelatedModel, TIntermediateModel, TResult>
  */
 abstract class HasOneOrManyThrough extends Relation
 {
@@ -71,7 +71,7 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Create a new has many through relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>  $query
      * @param  TDeclaringModel  $farParent
      * @param  TIntermediateModel  $throughParent
      * @param  string  $firstKey
@@ -111,7 +111,7 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Set the join clause on the query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>|null  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>|null  $query
      * @return void
      */
     protected function performJoin(Builder $query = null)
@@ -176,7 +176,7 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Build model dictionary keyed by the relation's foreign key.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel>  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel>  $results
      * @return array<array<TRelatedModel>>
      */
     protected function buildDictionary(Collection $results)
@@ -292,7 +292,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  array  $columns
      * @return TRelatedModel
      *
-     * @throws \FluentBooking\Framework\Database\Orm\ModelNotFoundException<TRelatedModel>
+     * @throws \Adirectory\Framework\Database\Orm\ModelNotFoundException<TRelatedModel>
      */
     public function firstOrFail($columns = ['*'])
     {
@@ -332,7 +332,7 @@ abstract class HasOneOrManyThrough extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return ($id is (\FluentBooking\Framework\Contracts\Support\Arrayable<array-key, mixed>|array<mixed>) ? \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel> : TRelatedModel|null)
+     * @return ($id is (\Adirectory\Framework\Contracts\Support\Arrayable<array-key, mixed>|array<mixed>) ? \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel> : TRelatedModel|null)
      */
     public function find($id, $columns = ['*'])
     {
@@ -348,9 +348,9 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Find multiple related models by their primary keys.
      *
-     * @param  \FluentBooking\Framework\Contracts\Support\ArrayableInterface|array  $ids
+     * @param  \Adirectory\Framework\Contracts\Support\ArrayableInterface|array  $ids
      * @param  array  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel>
      */
     public function findMany($ids, $columns = ['*'])
     {
@@ -370,9 +370,9 @@ abstract class HasOneOrManyThrough extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return ($id is (\FluentBooking\Framework\Contracts\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel> : TRelatedModel)
+     * @return ($id is (\Adirectory\Framework\Contracts\Support\ArrayableInterface<array-key, mixed>|array<mixed>) ? \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel> : TRelatedModel)
      *
-     * @throws \FluentBooking\Framework\Database\Orm\ModelNotFoundException<TRelatedModel>
+     * @throws \Adirectory\Framework\Database\Orm\ModelNotFoundException<TRelatedModel>
      */
     public function findOrFail($id, $columns = ['*'])
     {
@@ -400,8 +400,8 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  (\Closure(): TValue)|list<string>|string  $columns
      * @param  (\Closure(): TValue)|null  $callback
      * @return (
-     *     $id is (\FluentBooking\Framework\Contracts\Support\ArrayableInterface<array-key, mixed>|array<mixed>)
-     *     ? \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel>|TValue
+     *     $id is (\Adirectory\Framework\Contracts\Support\ArrayableInterface<array-key, mixed>|array<mixed>)
+     *     ? \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel>|TValue
      *     : TRelatedModel|TValue
      * )
      */
@@ -454,7 +454,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int  $page
-     * @return \FluentBooking\Framework\Contracts\Pagination\LengthAwarePaginator
+     * @return \Adirectory\Framework\Contracts\Pagination\LengthAwarePaginator
      */
     public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
@@ -470,7 +470,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \FluentBooking\Framework\Contracts\Pagination\Paginator
+     * @return \Adirectory\Framework\Contracts\Pagination\Paginator
      */
     public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {
@@ -486,7 +486,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  array  $columns
      * @param  string  $cursorName
      * @param  string|null  $cursor
-     * @return \FluentBooking\Framework\Contracts\Pagination\CursorPaginator
+     * @return \Adirectory\Framework\Contracts\Pagination\CursorPaginator
      */
     public function cursorPaginate($perPage = null, $columns = ['*'], $cursorName = 'cursor', $cursor = null)
     {
@@ -579,7 +579,7 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Get a generator for the given query.
      *
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function cursor()
     {
@@ -608,7 +608,7 @@ abstract class HasOneOrManyThrough extends Relation
      * Query lazily, by chunks of the given size.
      *
      * @param  int  $chunkSize
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazy($chunkSize = 1000)
     {
@@ -621,7 +621,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazyById($chunkSize = 1000, $column = null, $alias = null)
     {
@@ -638,7 +638,7 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  int  $chunkSize
      * @param  string|null  $column
      * @param  string|null  $alias
-     * @return \FluentBooking\Framework\Support\LazyCollection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Support\LazyCollection<int, TRelatedModel>
      */
     public function lazyByIdDesc($chunkSize = 1000, $column = null, $alias = null)
     {
@@ -653,7 +653,7 @@ abstract class HasOneOrManyThrough extends Relation
      * Prepare the query builder for query execution.
      *
      * @param  array  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>
+     * @return \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>
      */
     protected function prepareQueryBuilder($columns = ['*'])
     {
@@ -685,10 +685,10 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Add the constraints for a relationship query on the same table.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TDeclaringModel>  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TDeclaringModel>  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>
+     * @return \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>
      */
     public function getRelationExistenceQueryForSelfRelation(Builder $query, Builder $parentQuery, $columns = ['*'])
     {
@@ -710,10 +710,10 @@ abstract class HasOneOrManyThrough extends Relation
     /**
      * Add the constraints for a relationship query on the same table as the through parent.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder<TDeclaringModel>  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder<TDeclaringModel>  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder<TRelatedModel>
+     * @return \Adirectory\Framework\Database\Orm\Builder<TRelatedModel>
      */
     public function getRelationExistenceQueryForThroughSelfRelation(Builder $query, Builder $parentQuery, $columns = ['*'])
     {

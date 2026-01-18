@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations\Concerns;
+namespace Adirectory\Framework\Database\Orm\Relations\Concerns;
 
 use Closure;
 use InvalidArgumentException;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Str;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Query\JoinClause;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Str;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Query\JoinClause;
 
 trait CanBeOneOfMany
 {
@@ -29,14 +29,14 @@ trait CanBeOneOfMany
     /**
      * The one of many inner join subselect query builder instance.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Builder|null
+     * @var \Adirectory\Framework\Database\Orm\Builder|null
      */
     protected $oneOfManySubQuery;
 
     /**
      * Add constraints for inner join subselect for one of many relationships.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
      * @param  string|null  $column
      * @param  string|null  $aggregate
      * @return void
@@ -53,7 +53,7 @@ trait CanBeOneOfMany
     /**
      * Add join query constraints for one of many relationships.
      *
-     * @param  \FluentBooking\Framework\Database\Query\JoinClause  $join
+     * @param  \Adirectory\Framework\Database\Query\JoinClause  $join
      * @return void
      */
     abstract public function addOneOfManyJoinSubQueryConstraints(JoinClause $join);
@@ -183,7 +183,7 @@ trait CanBeOneOfMany
      * @param  string|array  $groupBy
      * @param  string|null  $column
      * @param  string|null  $aggregate
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     protected function newOneOfManySubQuery($groupBy, $column = null, $aggregate = null)
     {
@@ -207,8 +207,8 @@ trait CanBeOneOfMany
     /**
      * Add the join subquery to the given query on the given column and the relationship's foreign key.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parent
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $subQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $subQuery
      * @param  string  $on
      * @return void
      */
@@ -228,7 +228,7 @@ trait CanBeOneOfMany
     /**
      * Merge the relationship query joins to the given query builder.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $builder
      * @return void
      */
     protected function mergeOneOfManyJoinsTo(Builder $query)
@@ -241,7 +241,7 @@ trait CanBeOneOfMany
     /**
      * Get the query builder that will contain the relationship constraints.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     protected function getRelationQuery()
     {
@@ -253,7 +253,7 @@ trait CanBeOneOfMany
     /**
      * Get the one of many inner join subselect builder instance.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder|void
+     * @return \Adirectory\Framework\Database\Orm\Builder|void
      */
     public function getOneOfManySubQuery()
     {

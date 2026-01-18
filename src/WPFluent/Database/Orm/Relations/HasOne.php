@@ -1,15 +1,15 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Query\JoinClause;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\CanBeOneOfMany;
-use FluentBooking\Framework\Database\Orm\SupportsPartialRelations;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Query\JoinClause;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\CanBeOneOfMany;
+use Adirectory\Framework\Database\Orm\SupportsPartialRelations;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\ComparesRelatedModels;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\SupportsDefaultModels;
 
 class HasOne extends HasOneOrMany implements SupportsPartialRelations
 {
@@ -49,7 +49,7 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
      * Match the eagerly loaded results to their parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -63,10 +63,10 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
      *
      * Essentially, these queries compare on column names like "whereColumn".
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQuery(
         Builder $query,
@@ -83,7 +83,7 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
     /**
      * Add constraints for inner join subselect for one of many relationships.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
      * @param  string|null  $column
      * @param  string|null  $aggregate
      * @return void
@@ -107,7 +107,7 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
     /**
      * Add join query constraints for one of many relationships.
      *
-     * @param  \FluentBooking\Framework\Database\Query\JoinClause  $join
+     * @param  \Adirectory\Framework\Database\Query\JoinClause  $join
      * @return void
      */
     public function addOneOfManyJoinSubQueryConstraints(JoinClause $join)
@@ -122,8 +122,8 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
     /**
      * Make a new related instance for the given model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function newRelatedInstanceFor(Model $parent)
     {
@@ -135,7 +135,7 @@ class HasOne extends HasOneOrMany implements SupportsPartialRelations
     /**
      * Get the value of the model's foreign key.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @return mixed
      */
     protected function getRelatedKeyFrom(Model $model)

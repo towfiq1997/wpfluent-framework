@@ -1,22 +1,22 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
 use Closure;
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\ForwardsCalls;
-use FluentBooking\Framework\Support\MacroableTrait;
-use FluentBooking\Framework\Support\HelperFunctionsTrait;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\Query\Expression;
-use FluentBooking\Framework\Database\Orm\ModelNotFoundException;
-use FluentBooking\Framework\Database\MultipleRecordsFoundException;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\ForwardsCalls;
+use Adirectory\Framework\Support\MacroableTrait;
+use Adirectory\Framework\Support\HelperFunctionsTrait;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\Query\Expression;
+use Adirectory\Framework\Database\Orm\ModelNotFoundException;
+use Adirectory\Framework\Database\MultipleRecordsFoundException;
 
 /**
- * @mixin \FluentBooking\Framework\Database\Orm\Builder
+ * @mixin \Adirectory\Framework\Database\Orm\Builder
  */
 abstract class Relation
 {
@@ -28,21 +28,21 @@ abstract class Relation
     /**
      * The Orm query builder instance.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Builder
+     * @var \Adirectory\Framework\Database\Orm\Builder
      */
     protected $query;
 
     /**
      * The parent model instance.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Model
+     * @var \Adirectory\Framework\Database\Orm\Model
      */
     protected $parent;
 
     /**
      * The related model instance.
      *
-     * @var \FluentBooking\Framework\Database\Orm\Model
+     * @var \Adirectory\Framework\Database\Orm\Model
      */
     protected $related;
 
@@ -85,8 +85,8 @@ abstract class Relation
     /**
      * Create a new relation instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @return void
      */
     public function __construct(Builder $query, Model $parent)
@@ -148,7 +148,7 @@ abstract class Relation
      * Match the eagerly loaded results to their parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -164,7 +164,7 @@ abstract class Relation
     /**
      * Get the relationship for eager loading.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     public function getEager()
     {
@@ -177,10 +177,10 @@ abstract class Relation
      * Execute the query and get the first result if it's the sole matching record.
      *
      * @param  array|string  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      *
-     * @throws \FluentBooking\Framework\Database\Orm\ModelNotFoundException
-     * @throws \FluentBooking\Framework\Database\MultipleRecordsFoundException
+     * @throws \Adirectory\Framework\Database\Orm\ModelNotFoundException
+     * @throws \Adirectory\Framework\Database\MultipleRecordsFoundException
      */
     public function sole($columns = ['*'])
     {
@@ -203,7 +203,7 @@ abstract class Relation
      * Execute the query as a "select" statement.
      *
      * @param  array  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     public function get($columns = ['*'])
     {
@@ -240,9 +240,9 @@ abstract class Relation
     /**
      * Add the constraints for a relationship count query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceCountQuery(Builder $query, Builder $parentQuery)
     {
@@ -256,10 +256,10 @@ abstract class Relation
      *
      * Essentially, these queries compare on column names like whereColumn.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQuery(
         Builder $query,
@@ -301,7 +301,7 @@ abstract class Relation
     /**
      * Get the query builder that will contain the relationship constraints.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     protected function getRelationQuery()
     {
@@ -311,7 +311,7 @@ abstract class Relation
     /**
      * Get the underlying query for the relation.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getQuery()
     {
@@ -321,7 +321,7 @@ abstract class Relation
     /**
      * Get the base query builder driving the Orm builder.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function getBaseQuery()
     {
@@ -331,7 +331,7 @@ abstract class Relation
     /**
      * Get a base query builder instance.
      *
-     * @return \FluentBooking\Framework\Database\Query\Builder
+     * @return \Adirectory\Framework\Database\Query\Builder
      */
     public function toBase()
     {
@@ -341,7 +341,7 @@ abstract class Relation
     /**
      * Get the parent model of the relation.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function getParent()
     {
@@ -361,7 +361,7 @@ abstract class Relation
     /**
      * Get the related model of the relation.
      *
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function getRelated()
     {
@@ -404,7 +404,7 @@ abstract class Relation
      * @param  string  $whereIn
      * @param  string  $key
      * @param  array  $modelKeys
-     * @param  \FluentBooking\Framework\Database\Orm\Builder|null  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder|null  $query
      * @return void
      */
     protected function whereInEager(
@@ -422,7 +422,7 @@ abstract class Relation
     /**
      * Get the name of the "where in" method for eager loading.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @param  string  $key
      * @return string
      */

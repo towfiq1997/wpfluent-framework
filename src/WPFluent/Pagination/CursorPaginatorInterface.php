@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Pagination;
+namespace Adirectory\Framework\Pagination;
 
 interface CursorPaginatorInterface
 {
     /**
      * Get the URL for a given cursor.
      *
-     * @param  \FluentBooking\Framework\Pagination\Cursor|null  $cursor
+     * @param  \Adirectory\Framework\Pagination\Cursor|null  $cursor
      * @return string
      */
     public function url($cursor);
@@ -53,14 +53,14 @@ interface CursorPaginatorInterface
     /**
      * Get the "cursor" of the previous set of items.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function previousCursor();
 
     /**
      * Get the "cursor" of the next set of items.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function nextCursor();
 
@@ -74,7 +74,7 @@ interface CursorPaginatorInterface
     /**
      * Get the current cursor being paginated.
      *
-     * @return \FluentBooking\Framework\Pagination\Cursor|null
+     * @return \Adirectory\Framework\Pagination\Cursor|null
      */
     public function cursor();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Casts;
+namespace Adirectory\Framework\Database\Orm\Casts;
 
 class Attribute
 {

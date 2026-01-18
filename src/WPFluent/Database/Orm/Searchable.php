@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm;
+namespace Adirectory\Framework\Database\Orm;
 
 use Exception;
 
@@ -16,9 +16,9 @@ trait Searchable
     /**    
      * Search the model in a case-insensitive manner.
      *
-     * @param \FluentBooking\Framework\Database\Orm\Builder $query
+     * @param \Adirectory\Framework\Database\Orm\Builder $query
      * @param string $value
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      * @throws \Exception
      */
     public function scopeSearch($query, $value)

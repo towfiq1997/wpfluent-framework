@@ -1,14 +1,14 @@
 <?php
 
-namespace FluentBooking\Framework\Database\Orm\Relations;
+namespace Adirectory\Framework\Database\Orm\Relations;
 
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Database\Orm\Builder;
-use FluentBooking\Framework\Database\Orm\Collection;
-use FluentBooking\Framework\Database\UniqueConstraintViolationException;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
-use FluentBooking\Framework\Database\Orm\Relations\Concerns\SupportsInverseRelations;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Database\Orm\Builder;
+use Adirectory\Framework\Database\Orm\Collection;
+use Adirectory\Framework\Database\UniqueConstraintViolationException;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\InteractsWithDictionary;
+use Adirectory\Framework\Database\Orm\Relations\Concerns\SupportsInverseRelations;
 
 abstract class HasOneOrMany extends Relation
 {
@@ -31,8 +31,8 @@ abstract class HasOneOrMany extends Relation
     /**
      * Create a new has one or many relationship instance.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $parent
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Model  $parent
      * @param  string  $foreignKey
      * @param  string  $localKey
      * @return void
@@ -49,7 +49,7 @@ abstract class HasOneOrMany extends Relation
      * Create and return an un-saved instance of the related model.
      *
      * @param  array  $attributes
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function make(array $attributes = [])
     {
@@ -65,7 +65,7 @@ abstract class HasOneOrMany extends Relation
      * Create and return an un-saved instance of the related models.
      *
      * @param  iterable  $records
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     public function makeMany($records)
     {
@@ -116,7 +116,7 @@ abstract class HasOneOrMany extends Relation
      * Match the eagerly loaded results to their single parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -129,7 +129,7 @@ abstract class HasOneOrMany extends Relation
      * Match the eagerly loaded results to their many parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @return array
      */
@@ -142,7 +142,7 @@ abstract class HasOneOrMany extends Relation
      * Match the eagerly loaded results to their many parents.
      *
      * @param  array  $models
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @param  string  $relation
      * @param  string  $type
      * @return array
@@ -187,7 +187,7 @@ abstract class HasOneOrMany extends Relation
     /**
      * Build model dictionary keyed by the relation's foreign key.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Collection  $results
+     * @param  \Adirectory\Framework\Database\Orm\Collection  $results
      * @return array
      */
     protected function buildDictionary(Collection $results)
@@ -204,7 +204,7 @@ abstract class HasOneOrMany extends Relation
      *
      * @param  mixed  $id
      * @param  array  $columns
-     * @return \FluentBooking\Framework\Support\Collection|\FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Support\Collection|\Adirectory\Framework\Database\Orm\Model
      */
     public function findOrNew($id, $columns = ['*'])
     {
@@ -222,7 +222,7 @@ abstract class HasOneOrMany extends Relation
      *
      * @param  array  $attributes
      * @param  array  $values
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function firstOrNew(array $attributes = [], array $values = [])
     {
@@ -240,7 +240,7 @@ abstract class HasOneOrMany extends Relation
      *
      * @param  array  $attributes
      * @param  array  $values
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function firstOrCreate(array $attributes = [], array $values = [])
     {
@@ -275,7 +275,7 @@ abstract class HasOneOrMany extends Relation
      *
      * @param  array  $attributes
      * @param  array  $values
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function updateOrCreate(array $attributes, array $values = [])
     {
@@ -313,8 +313,8 @@ abstract class HasOneOrMany extends Relation
     /**
      * Attach a model instance to the parent model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
-     * @return \FluentBooking\Framework\Database\Orm\Model|false
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
+     * @return \Adirectory\Framework\Database\Orm\Model|false
      */
     public function save(Model $model)
     {
@@ -369,7 +369,7 @@ abstract class HasOneOrMany extends Relation
      * Create a new instance of the related model.
      *
      * @param  array  $attributes
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function create(array $attributes = [])
     {
@@ -398,7 +398,7 @@ abstract class HasOneOrMany extends Relation
      * Create a new instance of the related model. Allow mass-assignment.
      *
      * @param  array  $attributes
-     * @return \FluentBooking\Framework\Database\Orm\Model
+     * @return \Adirectory\Framework\Database\Orm\Model
      */
     public function forceCreate(array $attributes = [])
     {
@@ -423,7 +423,7 @@ abstract class HasOneOrMany extends Relation
      * Create a Collection of new instances of the related model.
      *
      * @param  iterable  $records
-     * @return \FluentBooking\Framework\Database\Orm\Collection
+     * @return \Adirectory\Framework\Database\Orm\Collection
      */
     public function createMany(iterable $records)
     {
@@ -441,7 +441,7 @@ abstract class HasOneOrMany extends Relation
      * model without raising any events to the parent model.
      *
      * @param  iterable  $records
-     * @return \FluentBooking\Framework\Database\Orm\Collection<int, TRelatedModel>
+     * @return \Adirectory\Framework\Database\Orm\Collection<int, TRelatedModel>
      */
     public function createManyQuietly(iterable $records)
     {
@@ -451,7 +451,7 @@ abstract class HasOneOrMany extends Relation
     /**
      * Set the foreign ID for creating a related model.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Model  $model
+     * @param  \Adirectory\Framework\Database\Orm\Model  $model
      * @return void
      */
     protected function setForeignAttributesForCreate(Model $model)
@@ -462,10 +462,10 @@ abstract class HasOneOrMany extends Relation
     /**
      * Add the constraints for a relationship query.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQuery(
         Builder $query,
@@ -484,10 +484,10 @@ abstract class HasOneOrMany extends Relation
     /**
      * Add the constraints for a relationship query on the same table.
      *
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $query
-     * @param  \FluentBooking\Framework\Database\Orm\Builder  $parentQuery
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $query
+     * @param  \Adirectory\Framework\Database\Orm\Builder  $parentQuery
      * @param  array|mixed  $columns
-     * @return \FluentBooking\Framework\Database\Orm\Builder
+     * @return \Adirectory\Framework\Database\Orm\Builder
      */
     public function getRelationExistenceQueryForSelfRelation(
         Builder $query,

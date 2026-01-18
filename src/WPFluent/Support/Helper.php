@@ -1,13 +1,13 @@
 <?php
 
-namespace FluentBooking\Framework\Support;
+namespace Adirectory\Framework\Support;
 
 use Closure;
 use Exception;
 use Throwable;
 use InvalidArgumentException;
-use FluentBooking\Framework\Foundation\App;
-use FluentBooking\Framework\Support\HigherOrderTapProxy;
+use Adirectory\Framework\Foundation\App;
+use Adirectory\Framework\Support\HigherOrderTapProxy;
 
 class Helper
 {
@@ -15,7 +15,7 @@ class Helper
      * Create a collection from the given value.
      *
      * @param  mixed $value
-     * @return \FluentBooking\Framework\Support\Collection
+     * @return \Adirectory\Framework\Support\Collection
      */
     public static function collect($value = null)
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentBooking\Framework\Http\Request;
+namespace Adirectory\Framework\Http\Request;
 
-use FluentBooking\Framework\Support\Arr;
-use FluentBooking\Framework\Support\DateTime;
+use Adirectory\Framework\Support\Arr;
+use Adirectory\Framework\Support\DateTime;
 
 trait InputHelperMethodsTrait
 {
@@ -223,12 +223,12 @@ trait InputHelperMethodsTrait
 	}
 
     /**
-     * Returns a FluentBooking\Framework\Framework\Support\Date object.
+     * Returns a Adirectory\Framework\Framework\Support\Date object.
      * 
      * @param  string $key 
      * @param  string $format
      * @param  string $tz
-     * @return FluentBooking\Framework\Framework\Support\Date
+     * @return Adirectory\Framework\Framework\Support\Date
      */
     public function getDate($key, $format = null, $tz = null)
     {

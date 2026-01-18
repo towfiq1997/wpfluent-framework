@@ -1,11 +1,11 @@
 <?php
 
-namespace FluentBooking\Framework\Validator\Rules;
+namespace Adirectory\Framework\Validator\Rules;
 
 use Closure;
-use FluentBooking\Framework\Database\Orm\Model;
-use FluentBooking\Framework\Support\Helper;
-use FluentBooking\Framework\Support\Str;
+use Adirectory\Framework\Database\Orm\Model;
+use Adirectory\Framework\Support\Helper;
+use Adirectory\Framework\Support\Str;
 
 trait DatabaseRule
 {
